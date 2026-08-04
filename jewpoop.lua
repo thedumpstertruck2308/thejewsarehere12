@@ -13,7 +13,7 @@ getgenv()['Prosper'] = {
 
         ["Character"] = {
            ['Avatar Spoofer'] = {-- Use the same body type as your target or this will break.
-              ['Enabled'] = true,
+              ['Enabled'] = false,
               ['Target'] = "prosperity1019",-- Username / UserID
               ['Skinny'] = true,-- Makes your spoofed avatar skinny.
             },
@@ -83,28 +83,28 @@ getgenv()['Prosper'] = {
             ['Closest'] = {
                 ['Mode'] = "Point",-- Part // Point
                 ['Scale'] = {true, 0.35},-- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
-				['Raycast'] = true,-- Will give you the 1:1 mouse position, and will ignore scale.
+		['Raycast'] = true,-- Will give you the 1:1 mouse position, and will ignore scale.
             },
             ['Prediction'] = {-- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
-				['Enabled'] = false, 
-				['Y Stabilizer'] = 0, 
-				['Auto Prediction'] = { 
-				    ['Enabled'] = true,-- If this is true, values don't apply
-				},
-				['Values'] = {
-					['X'] = 0.1, 
-					['Y'] = 0.1, 
-					['Z'] = 0.1	
-				},
-			 },
+		['Enabled'] = false, 
+		['Y Stabilizer'] = 0, 
+		['Auto Prediction'] = { 
+		   ['Enabled'] = true,-- If this is true, values don't apply
+		},
+		 ['Values'] = {
+		   ['X'] = 0.1, 
+		   ['Y'] = 0.1, 
+		   ['Z'] = 0.1	
+	        },
+	    },
 
             ['FOV'] = {-- FOV's
-                ['FOV Type'] = "2D",-- 2D // 3D
+                ['FOV Type'] = "3D",-- 2D // 3D
                 ['FOV Mode'] = "Simple",-- Simple is normal, Advanced is a Split FOV (better for legit fov's).
-                ['Show FOV'] = false,
+                ['Show FOV'] = true,
 
                 ['2D'] = {
-                    ['Simple'] = { {1, 2} },-- X // Y
+                    ['Simple'] = { {5, 5} },-- X // Y
 
                     ['Advanced'] = {
                         ['X'] = {1, 2},-- Left // Right
@@ -368,15 +368,15 @@ getgenv()['Prosper'] = {
     
                 ['Double-Barrel SG'] = {
                    ['Normal'] = { {30, 50} },-- Min // Max
-			       ['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
+		   ['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
                     math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05,
                     math.random() > 0.5 and math.random() * 0.1 or -math.random() * 0.1,
                     math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05
-				) end,
+		   ) end,
                 },
                 ['TacticalShotgun'] = {
                     ['Normal'] = { {30, 50} },-- Min // Max
-					['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
+		    ['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
                     math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05,
                     math.random() > 0.5 and math.random() * 0.1 or -math.random() * 0.1,
                     math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05
@@ -384,7 +384,7 @@ getgenv()['Prosper'] = {
                 },
                 ['Shotgun'] = {
                     ['Normal'] = { {30, 50} },-- Min // Max
-					['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
+		    ['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
                     math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05,
                     math.random() > 0.5 and math.random() * 0.1 or -math.random() * 0.1,
                     math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05
@@ -407,7 +407,7 @@ getgenv()['Prosper'] = {
 
         ['ESP'] = {
             ['Enabled'] = true,
-            ['Numbers'] = true,-- Numbers for Health & Armor Bar
+            ['Numbers'] = false,-- Numbers for Health & Armor Bar
             ['Numbers Size'] = 9,-- Size for Health & Armor numbers
             ['Color'] = Color3.fromRGB(255, 255, 255),
             ['OutlineColor'] = Color3.fromRGB(0, 0, 0),
