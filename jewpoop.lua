@@ -487,7 +487,7 @@ getgenv()['Prosper'] = {
             ['Speed Bypass'] = { ['Enabled'] = false },
             ['Speed Modifications'] = {
                 ['Enabled'] = true,
-                ['Mode'] = 'Velocity',-- Humanoid or Velocity (AssemblyLinearVelocity)
+                ['Mode'] = 'Velocity',-- Humanoid or Velocity
                 ['Multipliers'] = {
                     ['Normal'] = { ['Multiplier'] = 37.5 },
                     ['Shooting'] = { ['Multiplier'] = 37.5 },
