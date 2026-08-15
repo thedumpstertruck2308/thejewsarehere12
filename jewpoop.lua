@@ -33,10 +33,10 @@ getgenv()['Prosper'] = {
             ['Movement'] = {
                ['Speed'] = "V", 
                ['Jump'] = "J", 
-               ['Panic Ground'] = "G",
+               ['Panic Ground'] = "K",
             },
 
-             ['Utilities'] = {  ['Inventory Sorter'] = "F2", },
+             ['Utilities'] = {  ['Inventory Sorter'] = "F2" },
         },
         
         ['Targeting'] = {
@@ -72,9 +72,19 @@ getgenv()['Prosper'] = {
                  ['[TacticalShotgun]'] = { ['Enabled'] = false },
             }
         },
-       
+
         ['Rage Mode'] = {
             ['Enabled'] = false,-- Meant for raging.
+        },
+
+        ['Hitbox Expander'] = {
+            ['Enabled'] = true,
+            ['Show Hitbox'] = true,
+            ['Weapons'] = {
+                ['[Revolver]'] = { ['Size'] = {5, 5, 5}, ['Fix Blood'] = true }, -- X // Y // Z
+                ['[Double-Barrel SG]'] = { ['Size'] = {5, 5, 5}, ['Fix Blood'] = true }, -- X // Y // Z
+                ['[TacticalShotgun]'] = { ['Size'] = {5, 5, 5}, ['Fix Blood'] = true }, -- X // Y // Z
+            },
         },
 
         ['Silent Aimbot'] = {
@@ -156,12 +166,13 @@ getgenv()['Prosper'] = {
 
             ['Snappiness'] = { 
                 ['Enabled'] = true,
-                ['Type'] = 'Simple',-- Simple // Advanced
+                ['Type'] = 'Simple', -- Simple // Advanced
+                ['Curve Type'] = 'Bezier', -- Bezier // Easing
 
-                ['Simple'] = { {0.124, 0.111} },-- X // Y
+                ['Simple'] = { {0.124, 0.111} }, -- X // Y
 
                 ['Advanced'] = {
-                    ['Strength'] = { {0.24, 0.26} },-- X // Y 
+                    ['Strength'] = { {0.24, 0.26} }, -- X // Y 
 
                     ['Sensitivity'] = 0.22-- This is how fast / slow the Camera aimbot moves (Like sensitivity)
                 }
@@ -172,13 +183,12 @@ getgenv()['Prosper'] = {
                 ['Direction'] = "InOut"--[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
-            ['Humanize'] = {-- Passes clip checks
-                ['Bezier Curves'] = {
-                    ['Enabled'] = true,
-                    ['Mode'] = "2",-- "1" // "2" // "3"
+            ['Bezier'] = {
+                ['Mode'] = "2",-- "1" // "2" // "3" (Pre- Configured modes, and 1 is the least legit-looking while 3 is the most legit-looking. )
                     ['Speed Multiplier'] = 0.7,-- Lower = slower curve (less blatant), 1 = same speed as normal
                 },
 
+            ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
                     ['Snappiness'] = { {0.5, 0.5} }-- X // Y 
@@ -186,33 +196,32 @@ getgenv()['Prosper'] = {
 
                 ['Snap Delay'] = {-- Delay while snapping onto the person
                     ['Enabled'] = false,
-                    ['Delay'] = { {0.5, 0.7} },-- Min / Max 
+                    ['Delay'] = { {20, 20} },-- Min / Max (ms)
                     ['Multiplier'] = 1,-- How fast your camlock moves after the delay (higher = snappier, lower = smoother)
                 },
 
                 ['Target Switch Delay'] = {-- Delay when switching to a different target
                     ['Enabled'] = false,
-                    ['Delay'] = { {0.15, 0.25} }-- Min / Max 
+                    ['Delay'] = { {15, 25} }-- Min / Max (ms)
                 },
 
-                ['Distance-based Speed'] = {-- Move faster when closer to target
+                ['Distance Ramp'] = {-- Move faster when closer to target
                     ['Enabled'] = false,
                     ['Base Speed'] = 0.6,-- Base speed multiplier
-                    ['Distance Range'] = {10, 100},-- Studs (Min distance for max speed, Max distance for min speed)
+                    ['Distance Range'] = {35, 125},-- Pixels (Min distance for max speed, Max distance for min speed)
                 },
 
                 ['Readjustment'] = {-- Temporarily stops camlock when clicking / triggerbot fires
                     ['Enabled'] = false,
                     ['Triggerbot'] = true,-- Stop when triggerbot fires
                     ['Mouse Click'] = true,-- Stop when Mouse is clicked
-                    ['Delay'] = { {0.15, 0.25} },-- Min / Max
+                    ['Delay'] = { {15, 25} },-- Min / Max (ms)
                 },
 
-                ['Tracking Readjustment'] = {-- Temporarily stops camlock after crosshair has been on body for a delay, then retracks faster
+                ['Speed Ramp'] = { -- Scales aim speed based on how fast the target character is moving
                     ['Enabled'] = false,
-                    ['Tracking Time'] = { {0.25, 0.35} },-- Min / Max (How long crosshair must be on body before stopping)
-                    ['Stop Time'] = { {0.15, 0.25} },-- Min / Max (How long to stop tracking)
-                    ['Retrack Multiplier'] = { {1.3, 1.7} },-- Min / Max (How much faster to retrack after break, higher = snappier)
+                    ['Speed Range'] = { {4, 20} },-- Min / Max target speed (studs/s)
+                    ['Multiplier Range'] = { {1.0, 1.5} },-- Min / Max aim speed multiplier
                 },
 
                 ['Mouse Blend'] = {-- Blends aimbot with your Mouse movement
@@ -300,29 +309,29 @@ getgenv()['Prosper'] = {
                 ['Shotguns'] = { 
                     ['Weapons'] = { 'Double-Barrel SG', 'TacticalShotgun' },
                     ['Enabled'] = false,-- If delay is on or off for these guns.
-                    ['Initial'] = {true, 0.1, 0.15},-- Randomized delay when first shooting
-                    ['Mouse'] = {true, 0.05, 0.1},-- Randomized delay when mouse is inside exact hitbox / fov
-                    ['Shoot'] = {true, 0.3, 0.4},-- Randomized delay when shooting
-                    ['Tool Switch'] = {true, 0.2, 0.3},-- Randomized delay when switching to this weapon
-                    ['Target Switch'] = {false, 0.15, 0.2}-- Randomized delay when switching targets
+                    ['Initial'] = {true, 10, 15},-- Randomized delay when first shooting (ms)
+                    ['Mouse'] = {true, 5, 10},-- Randomized delay when mouse is inside exact hitbox / fov (ms)
+                    ['Shoot'] = {true, 30, 40},-- Randomized delay when shooting (ms)
+                    ['Tool Switch'] = {true, 20, 30},-- Randomized delay when switching to this weapon (ms)
+                    ['Target Switch'] = {false, 15, 20}-- Randomized delay when switching targets (ms)
                 },
                 ['Pistols'] = {
                     ['Weapons'] = { 'Revolver', 'Silencer' },
                     ['Enabled'] = false,-- If delay is on or off for these guns.
-                    ['Initial'] = {true, 0.1, 0.15},-- Randomized delay when first shooting
-                    ['Mouse'] = {true, 0.05, 0.1},-- Randomized delay when mouse is inside exact hitbox / fov
-                    ['Shoot'] = {true, 0.3, 0.4},-- Randomized delay when shooting
-                    ['Tool Switch'] = {true, 0.2, 0.3},-- Randomized delay when switching to this weapon
-                    ['Target Switch'] = {false, 0.15, 0.2}-- Randomized delay when switching targets
+                    ['Initial'] = {true, 10, 15},-- Randomized delay when first shooting (ms)
+                    ['Mouse'] = {true, 5, 10},-- Randomized delay when mouse is inside exact hitbox / fov (ms)
+                    ['Shoot'] = {true, 30, 40},-- Randomized delay when shooting (ms)
+                    ['Tool Switch'] = {true, 20, 30},-- Randomized delay when switching to this weapon (ms)
+                    ['Target Switch'] = {false, 15, 20}-- Randomized delay when switching targets (ms)
                 },
                 ['Others'] = {
                     ['Weapons'] = { 'Deagle', 'Rifle' },
                     ['Enabled'] = false,-- If delay is on or off for these guns.
-                    ['Initial'] = {true, 0.1, 0.15},-- Randomized delay when first shooting
-                    ['Mouse'] = {true, 0.05, 0.1},-- Randomized delay when mouse is inside exact hitbox / fov
-                    ['Shoot'] = {true, 0.3, 0.4},-- Randomized delay when shooting
-                    ['Tool Switch'] = {true, 0.2, 0.3},-- Randomized delay when switching to this weapon
-                    ['Target Switch'] = {false, 0.15, 0.2}-- Randomized delay when switching targets
+                    ['Initial'] = {true, 10, 15},-- Randomized delay when first shooting (ms)
+                    ['Mouse'] = {true, 5, 10},-- Randomized delay when mouse is inside exact hitbox / fov (ms)
+                    ['Shoot'] = {true, 30, 40},-- Randomized delay when shooting (ms)
+                    ['Tool Switch'] = {true, 20, 30},-- Randomized delay when switching to this weapon (ms)
+                    ['Target Switch'] = {false, 15, 20}-- Randomized delay when switching targets (ms)
                 },
             },
 
@@ -369,27 +378,27 @@ getgenv()['Prosper'] = {
     
                 ['Double-Barrel SG'] = {
                    ['Normal'] = { {30, 50} },-- Min // Max
-			       ['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
-                    math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05,
-                    math.random() > 0.5 and math.random() * 0.1 or -math.random() * 0.1,
-                    math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05
-				) end,
+                   ['Custom'] = {
+                        ['X'] = { {0.5, 0.03, 0.03}, },
+                        ['Y'] = { {0.5, 0.06, 0.06}, },
+                        ['Z'] = { {0.5, 0.03, 0.03}, },
+                   },
                 },
                 ['TacticalShotgun'] = {
                     ['Normal'] = { {30, 50} },-- Min // Max
-					['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
-                    math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05,
-                    math.random() > 0.5 and math.random() * 0.1 or -math.random() * 0.1,
-                    math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05
-				) end,
+                    ['Custom'] = {
+                        ['X'] = { {0.5, 0.03, 0.03}, },
+                        ['Y'] = { {0.5, 0.06, 0.06}, },
+                        ['Z'] = { {0.5, 0.03, 0.03}, },
+                    },
                 },
                 ['Shotgun'] = {
                     ['Normal'] = { {30, 50} },-- Min // Max
-					['Custom'] = function() return Vector3.new(-- This is the default spread for Da Hood, customize this how you prefer. 
-                    math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05,
-                    math.random() > 0.5 and math.random() * 0.1 or -math.random() * 0.1,
-                    math.random() > 0.5 and math.random() * 0.05 or -math.random() * 0.05
-				) end,
+                    ['Custom'] = {
+                        ['X'] = { {0.5, 0.03, 0.03}, },
+                        ['Y'] = { {0.5, 0.06, 0.06}, },
+                        ['Z'] = { {0.5, 0.03, 0.03}, },
+                    },
                 }
             },
 
@@ -466,35 +475,24 @@ getgenv()['Prosper'] = {
                 ['[TacticalShotgun]'] = 'Rainbow',
             }
         },
-
-        ['Wall Jump'] = {
-            ['Enabled'] = true,
-            ['Mode'] = 'Infinite',-- Infinite or Double
-            ['Spiderman'] = false,
-            ['Multipliers'] = {
-                ['Regular'] = { ['Multiplier'] = 1.2 },
-                ['Knife'] = { ['Multiplier'] = 1.4 },
-            },
-        },
-
-        ['Panic Ground'] = { ['Enabled'] = false, },
+        ['Anti Stomp'] = { ['Enabled'] = true },    
 
         ['Inventory Sorter'] = {
             ['Enabled'] = true,
             ['Order'] = { '[Revolver]', '[Double-Barrel SG]','[TacticalShotgun]', '[Knife]', },
         },
-        
+
         ['Character Modifications'] = {
             ['Enabled'] = false,
-            ['Anti Trip'] = true,
             ['Speed Bypass'] = { ['Enabled'] = false },
             ['Speed Modifications'] = {
                 ['Enabled'] = true,
+                ['Mode'] = 'Velocity',-- Humanoid or Velocity (AssemblyLinearVelocity)
                 ['Multipliers'] = {
-                    ['Normal'] = { ['Multiplier'] = 35 },
-                    ['Shooting'] = { ['Multiplier'] = 35 },
-                    ['Reload'] = { ['Multiplier'] = 35 },
-                    ['Low Health'] = { ['Multiplier'] = 35 },
+                    ['Normal'] = { ['Multiplier'] = 37.5 },
+                    ['Shooting'] = { ['Multiplier'] = 37.5 },
+                    ['Reload'] = { ['Multiplier'] = 37.5 },
+                    ['Low Health'] = { ['Multiplier'] = 37.5 },
                 },
             },
             ['Jump Modifications'] = {
@@ -506,7 +504,17 @@ getgenv()['Prosper'] = {
                     ['Low Health'] = { ['Multiplier'] = 1 },
                 },
             },
+            ['Wall Jump'] = {
+                ['Enabled'] = true,
+                ['Mode'] = 'Infinite',-- Infinite or Double
+                ['Spiderman'] = false,
+                ['Multipliers'] = {
+                    ['Regular'] = { ['Multiplier'] = 1.2 },
+                    ['Knife'] = { ['Multiplier'] = 1.4 },
+                },
+            },
         },
+        ['Anti Trip'] = true,
         ['No Jump Cooldown'] = true,
-
+        ['Panic Ground'] = false,
     }
