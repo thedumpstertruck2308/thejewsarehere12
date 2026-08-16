@@ -78,7 +78,7 @@ getgenv()['Prosper'] = {
         },
 
         ['Hitbox Expander'] = {
-            ['Enabled'] = true,
+            ['Enabled'] = false,
             ['Show Hitbox'] = true,
             ['Weapons'] = {
                 ['[Revolver]'] = { ['Size'] = {5, 5, 5}, ['Fix Blood'] = true }, -- X // Y // Z
@@ -184,9 +184,8 @@ getgenv()['Prosper'] = {
             },
 
             ['Bezier'] = {
-                ['Mode'] = "2",-- "1" // "2" // "3" (Pre- Configured modes, and 1 is the least legit-looking while 3 is the most legit-looking. )
-                    ['Speed Multiplier'] = 0.7,-- Lower = slower curve (less blatant), 1 = same speed as normal
-                },
+                ['Mode'] = "Low",-- "Linear" / "Low" / "Mid" / "High" / "Curve"
+            },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
