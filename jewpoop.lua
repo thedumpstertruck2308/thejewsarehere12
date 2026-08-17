@@ -21,7 +21,7 @@ getgenv()['Prosper'] = {
             ["Korblox"] = false, 
         },
 
-        ["Keybinds"] = { 
+        ["Keybinds"] = { -- These keybinds will determine how certain features work upon activation.
             ['Combat'] = {
                ['Target'] = "C", 
                ['Camera Aimbot'] = "C", 
