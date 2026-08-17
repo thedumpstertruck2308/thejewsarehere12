@@ -516,4 +516,4 @@ getgenv()['Prosper'] = {
         ['Anti Trip'] = true,
         ['No Jump Cooldown'] = true,
         ['Panic Ground'] = false,
-    }
+}
