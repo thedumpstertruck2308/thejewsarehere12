@@ -98,10 +98,9 @@ getgenv()['Prosper'] = {
             },
             ['Prediction'] = {-- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
 				['Enabled'] = false, 
-				['Y Axis'] = "Full",-- Off // Legit // Half // Full
+				['Y Axis'] = "Full",--// Legit // Half // Full
 				['Auto Prediction'] = { 
 				    ['Enabled'] = true,-- If this is true, values don't apply
-				    ['Lead Offset'] = 0,-- Seconds added to the network-delay lead. Negative under-leads, positive over-leads.
 				},
 				['Values'] = {
 					['X'] = 0.1, 
