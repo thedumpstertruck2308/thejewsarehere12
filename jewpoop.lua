@@ -21,7 +21,7 @@ getgenv()['Prosper'] = {
             ["Korblox"] = false, 
         },
 
-        ["Keybinds"] = { -- These keybinds will determine how certain features work upon activation.
+        ["Keybinds"] = {-- These keybinds will determine how certain features work upon activation.
             ['Combat'] = {
                ['Target'] = "C", 
                ['Camera Aimbot'] = "C", 
@@ -40,7 +40,7 @@ getgenv()['Prosper'] = {
         },
         
         ['Targeting'] = {
-            ['Target Mode'] = 'Automatic',-- Automatic // Target
+            ['Target Mode'] = 'Target',-- Automatic // Target
         },
 
         ["Universal Checks"] = {
@@ -67,14 +67,14 @@ getgenv()['Prosper'] = {
         ['Future'] = {-- Helps with blanking, use when raging though.
             ['Enabled'] = true,
             ['Guns'] = {
-                 ['[Revolver]'] = { ['Enabled'] = false },
+                 ['[Revolver]'] = { ['Enabled'] = true },
                  ['[Double-Barrel SG]'] = { ['Enabled'] = false },
                  ['[TacticalShotgun]'] = { ['Enabled'] = false },
             }
         },
 
         ['Rage Mode'] = {
-            ['Enabled'] = false,-- Meant for raging.
+            ['Enabled'] = true,-- Meant for raging.
         },
 
         ['Hitbox Expander'] = {
@@ -98,9 +98,10 @@ getgenv()['Prosper'] = {
             },
             ['Prediction'] = {-- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
 				['Enabled'] = false, 
-				['Y Stabilizer'] = 0, 
+				['Y Axis'] = "Full",-- Off // Legit // Half // Full
 				['Auto Prediction'] = { 
 				    ['Enabled'] = true,-- If this is true, values don't apply
+				    ['Lead Offset'] = 0,-- Seconds added to the network-delay lead. Negative under-leads, positive over-leads.
 				},
 				['Values'] = {
 					['X'] = 0.1, 
@@ -143,7 +144,7 @@ getgenv()['Prosper'] = {
         ['Camera Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000, 
-            ['Mode'] = "Hold",-- Toggle / Hold / Always
+            ['Mode'] = "Always",-- Toggle / Hold / Always
             ['Sticky'] = false,
             ['Hit Part'] = "Closest",-- Closest // Part Name
             ['Closest'] = {
@@ -154,6 +155,7 @@ getgenv()['Prosper'] = {
 
             ['Prediction'] = {
                 ['Enabled'] = false,
+                ['Y Axis'] = "Off",-- Off // Legit // Half // Full
                 ['Auto Prediction'] = {
                     ['Enabled'] = false,
                 },
@@ -169,7 +171,7 @@ getgenv()['Prosper'] = {
                 ['Type'] = 'Simple', -- Simple // Advanced
                 ['Curve Type'] = 'Bezier', -- Bezier // Easing
 
-                ['Simple'] = { {0.124, 0.111} }, -- X // Y
+                ['Simple'] = { {0.500, 0.500} }, -- X // Y
 
                 ['Advanced'] = {
                     ['Strength'] = { {0.24, 0.26} }, -- X // Y 
@@ -190,7 +192,7 @@ getgenv()['Prosper'] = {
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
-                    ['Snappiness'] = { {0.5, 0.5} }-- X // Y 
+                    ['Snappiness'] = { {0.9, 0.9} }-- X // Y 
                 },
 
                 ['Snap Delay'] = {-- Delay while snapping onto the person
@@ -243,7 +245,7 @@ getgenv()['Prosper'] = {
                 ['Show FOV'] = false,
                 ['Show Deadzone FOV'] = false,
 
-                ['Circle'] = { ['Radius'] = 125,  ['Deadzone Radius'] = 35 },
+                ['Circle'] = { ['Radius'] = 500,  ['Deadzone Radius'] = 350 },
 
                 ['2D'] = {
                     ['Simple'] = { {1, 2} },-- X // Y
@@ -294,6 +296,7 @@ getgenv()['Prosper'] = {
 
             ['Prediction'] = {
                 ['Enabled'] = false,
+                ['Y Axis'] = "Off",-- Off // Legit // Half // Full
                 ['Auto Prediction'] = {
                     ['Enabled'] = false,
                 },
@@ -363,7 +366,7 @@ getgenv()['Prosper'] = {
 
         ['Gun Modifications'] = {
             ['Delay Changer'] = {
-                ['Enabled'] = false,
+                ['Enabled'] = true,
                 ['Weapons'] = {
                     ['[Double-Barrel SG]'] = 37,
                     ['[Revolver]'] = 67,
@@ -402,7 +405,7 @@ getgenv()['Prosper'] = {
             },
 
             ['Damage Override'] = { 
-                ['Enabled'] = false,
+                ['Enabled'] = true,
                 ['Weapons'] = {-- Full // Half // Min // Normal
                     ['[Revolver]'] = { ['Mode'] = 'Full' },
                     ['[Double-Barrel SG]'] = { ['Mode'] = 'Full' },
@@ -410,7 +413,7 @@ getgenv()['Prosper'] = {
                 },
             },
 
-            ['Range Enhancer'] = { ['Enabled'] = false, },
+            ['Range Enhancer'] = { ['Enabled'] = true, },
 
         },
 
@@ -482,11 +485,11 @@ getgenv()['Prosper'] = {
         },
 
         ['Character Modifications'] = {
-            ['Enabled'] = false,
-            ['Speed Bypass'] = { ['Enabled'] = false },
+            ['Enabled'] = true,
+            ['Speed Bypass'] = { ['Enabled'] = true },
             ['Speed Modifications'] = {
                 ['Enabled'] = true,
-                ['Mode'] = 'Velocity',-- Humanoid or Velocity
+                ['Mode'] = 'Humanoid',-- Humanoid or Velocity
                 ['Multipliers'] = {
                     ['Normal'] = { ['Multiplier'] = 37.5 },
                     ['Shooting'] = { ['Multiplier'] = 37.5 },
@@ -497,10 +500,10 @@ getgenv()['Prosper'] = {
             ['Jump Modifications'] = {
                 ['Enabled'] = true,
                 ['Multipliers'] = {
-                    ['Normal'] = { ['Multiplier'] = 1 },
-                    ['Shooting'] = { ['Multiplier'] = 1 },
-                    ['Reload'] = { ['Multiplier'] = 1 },
-                    ['Low Health'] = { ['Multiplier'] = 1 },
+                    ['Normal'] = { ['Multiplier'] = 5 },
+                    ['Shooting'] = { ['Multiplier'] = 5 },
+                    ['Reload'] = { ['Multiplier'] = 5 },
+                    ['Low Health'] = { ['Multiplier'] = 5 },
                 },
             },
             ['Wall Jump'] = {
@@ -516,4 +519,4 @@ getgenv()['Prosper'] = {
         ['Anti Trip'] = true,
         ['No Jump Cooldown'] = true,
         ['Panic Ground'] = false,
-}
+    }
