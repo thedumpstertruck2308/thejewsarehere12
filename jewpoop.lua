@@ -21,7 +21,7 @@ getgenv()['Prosper'] = {
             ["Korblox"] = false, 
         },
 
-        ["Keybinds"] = {-- These keybinds will determine how certain features work upon activation.
+        ["Keybinds"] = { -- These keybinds will determine how certain features work upon activation.
             ['Combat'] = {
                ['Target'] = "C", 
                ['Camera Aimbot'] = "C", 
@@ -40,7 +40,7 @@ getgenv()['Prosper'] = {
         },
         
         ['Targeting'] = {
-            ['Target Mode'] = 'Target',-- Automatic // Target
+            ['Target Mode'] = 'Automatic',-- Automatic // Target
         },
 
         ["Universal Checks"] = {
@@ -67,14 +67,14 @@ getgenv()['Prosper'] = {
         ['Future'] = {-- Helps with blanking, use when raging though.
             ['Enabled'] = true,
             ['Guns'] = {
-                 ['[Revolver]'] = { ['Enabled'] = true },
+                 ['[Revolver]'] = { ['Enabled'] = false },
                  ['[Double-Barrel SG]'] = { ['Enabled'] = false },
                  ['[TacticalShotgun]'] = { ['Enabled'] = false },
             }
         },
 
         ['Rage Mode'] = {
-            ['Enabled'] = true,-- Meant for raging.
+            ['Enabled'] = false,-- Meant for raging.
         },
 
         ['Hitbox Expander'] = {
@@ -97,9 +97,9 @@ getgenv()['Prosper'] = {
 				['Raycast'] = true,-- Will give you the 1:1 mouse position, and will ignore scale.
             },
             ['Prediction'] = {-- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
-				['Enabled'] = false, 
-				['Y Axis'] = "Full",--// Legit // Half // Full
-				['Auto Prediction'] = { 
+				['Enabled'] = true, 
+				['Y Axis'] = "Legit",-- Legit // Very Legit // Half // Full
+				['Auto Prediction'] = {
 				    ['Enabled'] = true,-- If this is true, values don't apply
 				},
 				['Values'] = {
@@ -115,7 +115,7 @@ getgenv()['Prosper'] = {
                 ['Show FOV'] = false,
 
                 ['2D'] = {
-                    ['Simple'] = { {1, 2} },-- X // Y
+                    ['Simple'] = { {6, 7} },-- X // Y
 
                     ['Advanced'] = {
                         ['X'] = {1, 2},-- Left // Right
@@ -136,14 +136,14 @@ getgenv()['Prosper'] = {
         },
         
         ['Client Redirection'] = {-- ONLY works on emulated 0-delay games & Void-Falls.
-            ['Enabled'] = true, 
+            ['Enabled'] = false, 
             ['Weapons'] = { '[rev]', '[Silencer]', '[Glock]' } 
         },
 
         ['Camera Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000, 
-            ['Mode'] = "Always",-- Toggle / Hold / Always
+            ['Mode'] = "Hold",-- Toggle / Hold / Always
             ['Sticky'] = false,
             ['Hit Part'] = "Closest",-- Closest // Part Name
             ['Closest'] = {
@@ -154,7 +154,7 @@ getgenv()['Prosper'] = {
 
             ['Prediction'] = {
                 ['Enabled'] = false,
-                ['Y Axis'] = "Off",-- Off // Legit // Half // Full
+                ['Y Axis'] = "Legit",-- Legit // Very Legit // Half // Full
                 ['Auto Prediction'] = {
                     ['Enabled'] = false,
                 },
@@ -168,9 +168,9 @@ getgenv()['Prosper'] = {
             ['Snappiness'] = { 
                 ['Enabled'] = true,
                 ['Type'] = 'Simple', -- Simple // Advanced
-                ['Curve Type'] = 'Bezier', -- Bezier // Easing
+                ['Curve Type'] = 'Easing', -- Bezier // Easing
 
-                ['Simple'] = { {0.500, 0.500} }, -- X // Y
+                ['Simple'] = { {0.124, 0.111} }, -- X // Y
 
                 ['Advanced'] = {
                     ['Strength'] = { {0.24, 0.26} }, -- X // Y 
@@ -181,7 +181,7 @@ getgenv()['Prosper'] = {
 
             ['Easing'] = {
                 ['Style'] = "Linear",--[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
-                ['Direction'] = "InOut"--[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
+                ['Direction'] = "In"--[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
             ['Bezier'] = {
@@ -191,7 +191,7 @@ getgenv()['Prosper'] = {
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
-                    ['Snappiness'] = { {0.9, 0.9} }-- X // Y 
+                    ['Snappiness'] = { {0.2, 0.2} }-- X // Y 
                 },
 
                 ['Snap Delay'] = {-- Delay while snapping onto the person
@@ -244,7 +244,7 @@ getgenv()['Prosper'] = {
                 ['Show FOV'] = false,
                 ['Show Deadzone FOV'] = false,
 
-                ['Circle'] = { ['Radius'] = 500,  ['Deadzone Radius'] = 350 },
+                ['Circle'] = { ['Radius'] = 125,  ['Deadzone Radius'] = 35 },
 
                 ['2D'] = {
                     ['Simple'] = { {1, 2} },-- X // Y
@@ -290,12 +290,12 @@ getgenv()['Prosper'] = {
             ['Range'] = 200, 
             ['Settings'] = {
                 ['Mode'] = "Hold",-- Always // Hold // Toggle
-                ['Type'] = "Exact"-- FOV // Exact
+                ['Type'] = "FOV"-- FOV // Exact
             },
 
             ['Prediction'] = {
                 ['Enabled'] = false,
-                ['Y Axis'] = "Off",-- Off // Legit // Half // Full
+                ['Y Axis'] = "Legit",-- Legit // Very Legit // Half // Full
                 ['Auto Prediction'] = {
                     ['Enabled'] = false,
                 },
@@ -339,7 +339,7 @@ getgenv()['Prosper'] = {
     
            ['FOV'] = {-- FOV's
                 ['FOV Type'] = "2D",-- 2D // 3D
-                ['FOV Mode'] = "Simple",-- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Mode'] = "Advanced",-- Simple is normal, Advanced is a Split FOV (better for legit fov's).
                 ['Show FOV'] = false,
         
                 ['2D'] = {
@@ -365,7 +365,7 @@ getgenv()['Prosper'] = {
 
         ['Gun Modifications'] = {
             ['Delay Changer'] = {
-                ['Enabled'] = true,
+                ['Enabled'] = false,
                 ['Weapons'] = {
                     ['[Double-Barrel SG]'] = 37,
                     ['[Revolver]'] = 67,
@@ -404,7 +404,7 @@ getgenv()['Prosper'] = {
             },
 
             ['Damage Override'] = { 
-                ['Enabled'] = true,
+                ['Enabled'] = false,
                 ['Weapons'] = {-- Full // Half // Min // Normal
                     ['[Revolver]'] = { ['Mode'] = 'Full' },
                     ['[Double-Barrel SG]'] = { ['Mode'] = 'Full' },
@@ -412,7 +412,7 @@ getgenv()['Prosper'] = {
                 },
             },
 
-            ['Range Enhancer'] = { ['Enabled'] = true, },
+            ['Range Enhancer'] = { ['Enabled'] = false, },
 
         },
 
@@ -484,11 +484,11 @@ getgenv()['Prosper'] = {
         },
 
         ['Character Modifications'] = {
-            ['Enabled'] = true,
-            ['Speed Bypass'] = { ['Enabled'] = true },
+            ['Enabled'] = false,
+            ['Speed Bypass'] = { ['Enabled'] = false },
             ['Speed Modifications'] = {
                 ['Enabled'] = true,
-                ['Mode'] = 'Humanoid',-- Humanoid or Velocity
+                ['Mode'] = 'Velocity',-- Humanoid or Velocity
                 ['Multipliers'] = {
                     ['Normal'] = { ['Multiplier'] = 37.5 },
                     ['Shooting'] = { ['Multiplier'] = 37.5 },
@@ -499,10 +499,10 @@ getgenv()['Prosper'] = {
             ['Jump Modifications'] = {
                 ['Enabled'] = true,
                 ['Multipliers'] = {
-                    ['Normal'] = { ['Multiplier'] = 5 },
-                    ['Shooting'] = { ['Multiplier'] = 5 },
-                    ['Reload'] = { ['Multiplier'] = 5 },
-                    ['Low Health'] = { ['Multiplier'] = 5 },
+                    ['Normal'] = { ['Multiplier'] = 1 },
+                    ['Shooting'] = { ['Multiplier'] = 1 },
+                    ['Reload'] = { ['Multiplier'] = 1 },
+                    ['Low Health'] = { ['Multiplier'] = 1 },
                 },
             },
             ['Wall Jump'] = {
