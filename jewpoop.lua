@@ -2,20 +2,20 @@ getgenv()['Prosper'] = {
         ['Extras'] = {
             ["Mod Detector"] = {
                 ["Enabled"] = true,
-                ["Action"] = "Kick",-- Notify // Kick
+                ["Action"] = "Kick", -- Notify // Kick
             },
             ['Report Detector'] = {
                 ['Enabled'] = true,
-                ['Action'] = "Notify",-- Notify // Kick
+                ['Action'] = "Notify", -- Notify // Kick
                 ['Report Back'] = true,
             },
         },
 
         ["Character"] = {
-           ['Avatar Spoofer'] = {-- Use the same body type as your target or this will break.
+           ['Avatar Spoofer'] = { -- Use the same body type as your target or this will break.
               ['Enabled'] = true,
-              ['Target'] = "prosperity1019",-- Username / UserID
-              ['Skinny'] = true,-- Makes your spoofed avatar skinny.
+              ['Target'] = "prosperity1019", -- Username / UserID
+              ['Skinny'] = true, -- Makes your spoofed avatar skinny.
             },
             ["Headless"] = true, 
             ["Korblox"] = false, 
@@ -40,7 +40,7 @@ getgenv()['Prosper'] = {
         },
         
         ['Targeting'] = {
-            ['Target Mode'] = 'Automatic',-- Automatic // Target
+            ['Target Mode'] = 'Automatic', -- Automatic // Target
         },
 
         ["Universal Checks"] = {
@@ -52,21 +52,21 @@ getgenv()['Prosper'] = {
         },
 
         ['Target Mode Checks'] = {
-            ['Automatic'] = {-- Automatic Mode Specific Checks
+            ['Automatic'] = { -- Automatic Mode Specific Checks
                 ['Visible Check'] = true,
                 ['Distance Check'] = false, 
             },
         
-            ['Target'] = {-- Target Mode Specific Checks
+            ['Target'] = { -- Target Mode Specific Checks
                 ['Visible Check'] = false,
                 ['Distance Check'] = false,
                 ['Visible While Targeted'] = true,
-                ['Swap'] = false,-- Pressing Target while already targeting picks a new target instead of untargeting
-                ['Ignore Knocked'] = false,-- Keep your target while they're knocked, until you untarget or swap
+                ['Swap'] = false,
+                ['Ignore Knocked'] = false,
             },
         },
         
-        ['Future'] = {-- Helps with blanking, use when raging though.
+        ['Future'] = { -- Helps with blanking, use when raging though.
             ['Enabled'] = true,
             ['Guns'] = {
                  ['[Revolver]'] = { 
