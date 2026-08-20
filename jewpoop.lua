@@ -21,7 +21,7 @@ getgenv()['Prosper'] = {
             ["Korblox"] = false, 
         },
 
-        ["Keybinds"] = { -- These keybinds will determine how certain features work upon activation.
+        ["Keybinds"] = { 
             ['Combat'] = {
                ['Target'] = "C", 
                ['Camera Aimbot'] = "C", 
@@ -58,27 +58,40 @@ getgenv()['Prosper'] = {
             },
         
             ['Target'] = {-- Target Mode Specific Checks
-                ['Visible Check'] = false, 
-                ['Distance Check'] = false, 
-                ['Visible While Targeted'] = true
+                ['Visible Check'] = false,
+                ['Distance Check'] = false,
+                ['Visible While Targeted'] = true,
+                ['Swap'] = false,-- Pressing Target while already targeting picks a new target instead of untargeting
+                ['Ignore Knocked'] = false,-- Keep your target while they're knocked, until you untarget or swap
             },
         },
         
         ['Future'] = {-- Helps with blanking, use when raging though.
             ['Enabled'] = true,
             ['Guns'] = {
-                 ['[Revolver]'] = { ['Enabled'] = false },
-                 ['[Double-Barrel SG]'] = { ['Enabled'] = false },
-                 ['[TacticalShotgun]'] = { ['Enabled'] = false },
+                 ['[Revolver]'] = { 
+                    ['Enabled'] = false, 
+                    ['Scale'] = 1, -- Multiplier
+                 },
+
+                 ['[Double-Barrel SG]'] = { 
+                    ['Enabled'] = false, 
+                    ['Scale'] = 1,-- Multiplier
+                 },
+
+                 ['[TacticalShotgun]'] = { 
+                    ['Enabled'] = false, 
+                    ['Scale'] = 1,-- Multiplier
+                 },
             }
         },
 
         ['Rage Mode'] = {
-            ['Enabled'] = false,-- Meant for raging.
+            ['Enabled'] = false, -- Meant for raging.
         },
 
         ['Hitbox Expander'] = {
-            ['Enabled'] = false,
+            ['Enabled'] = true,
             ['Show Hitbox'] = true,
             ['Weapons'] = {
                 ['[Revolver]'] = { ['Size'] = {5, 5, 5}, ['Fix Blood'] = true }, -- X // Y // Z
@@ -90,17 +103,18 @@ getgenv()['Prosper'] = {
         ['Silent Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000, 
-            ['Hit Part'] = "Closest",-- Closest // Part Name
+            ['Hit Part'] = "Closest", -- Closest // Part Name
             ['Closest'] = {
-                ['Mode'] = "Point",-- Part // Point
-                ['Scale'] = {true, 0.35},-- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
-				['Raycast'] = true,-- Will give you the 1:1 mouse position, and will ignore scale.
+                ['Mode'] = "Point", -- Part // Point
+                ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
+				['Raycast'] = true, -- Will give you the 1:1 mouse position, and will ignore scale.
             },
-            ['Prediction'] = {-- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
-				['Enabled'] = true, 
-				['Y Axis'] = "Legit",-- Legit // Very Legit // Half // Full
+            ['Prediction'] = { -- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
+				['Enabled'] = false, 
+				['Y Axis'] = "Full", -- Legit // Very Legit // Half // Full
 				['Auto Prediction'] = {
-				    ['Enabled'] = true,-- If this is true, values don't apply
+				    ['Enabled'] = true, -- If this is true, values don't apply
+				    ['Scale'] = 1, -- Multiplier
 				},
 				['Values'] = {
 					['X'] = 0.1, 
@@ -110,53 +124,53 @@ getgenv()['Prosper'] = {
 			 },
 
             ['FOV'] = {-- FOV's
-                ['FOV Type'] = "2D",-- 2D // 3D
-                ['FOV Mode'] = "Simple",-- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Type'] = "2D", -- 2D // 3D
+                ['FOV Mode'] = "Simple", -- Simple is normal, Advanced is a Split FOV (better for legit fov's).
                 ['Show FOV'] = false,
 
                 ['2D'] = {
-                    ['Simple'] = { {6, 7} },-- X // Y
+                    ['Simple'] = { {1, 2} }, -- X // Y
 
                     ['Advanced'] = {
-                        ['X'] = {1, 2},-- Left // Right
-                        ['Y'] = {1, 2},-- Up // Down
+                        ['X'] = {1, 2}, -- Left // Right
+                        ['Y'] = {1, 2}, -- Up // Down
                     }
                 },
 
                 ['3D'] = {
-                    ['Simple'] = {3, 5, 3},-- X // Y // Z
+                    ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                     ['Advanced'] = {
-                        ['X'] = {1.5, 1.8},-- Left // Right
-                        ['Y'] = {1, 2},-- Up // Down
-                        ['Z'] = {1, 2},-- Left // Right (Side of Player)
+                        ['X'] = {1.5, 1.8}, -- Left // Right
+                        ['Y'] = {1, 2}, -- Up // Down
+                        ['Z'] = {1, 2}, -- Left // Right (Side of Player)
                     }
                 }
             }
         },
         
-        ['Client Redirection'] = {-- ONLY works on emulated 0-delay games & Void-Falls.
-            ['Enabled'] = false, 
+        ['Client Redirection'] = { -- ONLY works on emulated 0-delay games & Void-Falls.
+            ['Enabled'] = true, 
             ['Weapons'] = { '[rev]', '[Silencer]', '[Glock]' } 
         },
 
         ['Camera Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000, 
-            ['Mode'] = "Hold",-- Toggle / Hold / Always
+            ['Mode'] = "Hold", -- Toggle / Hold / Always
             ['Sticky'] = false,
-            ['Hit Part'] = "Closest",-- Closest // Part Name
+            ['Hit Part'] = "Closest", -- Closest // Part Name
             ['Closest'] = {
-                ['Mode'] = "Point",-- Part // Point
-                ['Scale'] = {true, 0.35},-- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
-				['Raycast'] = true-- Will give you the 1:1 mouse position, and will ignore scale.
+                ['Mode'] = "Point", -- Part // Point
+                ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
+				['Raycast'] = true -- Will give you the 1:1 mouse position, and will ignore scale.
             },
 
             ['Prediction'] = {
                 ['Enabled'] = false,
-                ['Y Axis'] = "Legit",-- Legit // Very Legit // Half // Full
                 ['Auto Prediction'] = {
                     ['Enabled'] = false,
+                    ['Scale'] = 1, -- Multiplier
                 },
                 ['Values'] = {
                     ['X'] = 0.1,
@@ -168,65 +182,65 @@ getgenv()['Prosper'] = {
             ['Snappiness'] = { 
                 ['Enabled'] = true,
                 ['Type'] = 'Simple', -- Simple // Advanced
-                ['Curve Type'] = 'Easing', -- Bezier // Easing
+                ['Curve Type'] = 'Bezier', -- Bezier // Easing
 
                 ['Simple'] = { {0.124, 0.111} }, -- X // Y
 
                 ['Advanced'] = {
                     ['Strength'] = { {0.24, 0.26} }, -- X // Y 
 
-                    ['Sensitivity'] = 0.22-- This is how fast / slow the Camera aimbot moves (Like sensitivity)
+                    ['Sensitivity'] = 0.22 -- This is how fast / slow the Camera aimbot moves (Like sensitivity)
                 }
             },
 
             ['Easing'] = {
-                ['Style'] = "Linear",--[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
-                ['Direction'] = "In"--[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
+                ['Style'] = "Linear", --[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
+                ['Direction'] = "InOut" --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
             ['Bezier'] = {
-                ['Mode'] = "Low",-- "Linear" / "Low" / "Mid" / "High" / "Curve"
+                ['Mode'] = "Low", -- "Linear" / "Low" / "Mid" / "High" / "Curve"
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
-                    ['Snappiness'] = { {0.2, 0.2} }-- X // Y 
+                    ['Snappiness'] = { {0.5, 0.5} } -- X // Y 
                 },
 
-                ['Snap Delay'] = {-- Delay while snapping onto the person
+                ['Snap Delay'] = { -- Delay while snapping onto the person
                     ['Enabled'] = false,
-                    ['Delay'] = { {20, 20} },-- Min / Max (ms)
-                    ['Multiplier'] = 1,-- How fast your camlock moves after the delay (higher = snappier, lower = smoother)
+                    ['Delay'] = { {20, 20} }, -- Min / Max (ms)
+                    ['Multiplier'] = 1, -- How fast your camlock moves after the delay (higher = snappier, lower = smoother)
                 },
 
-                ['Target Switch Delay'] = {-- Delay when switching to a different target
+                ['Target Switch Delay'] = { -- Delay when switching to a different target
                     ['Enabled'] = false,
-                    ['Delay'] = { {15, 25} }-- Min / Max (ms)
+                    ['Delay'] = { {15, 25} } -- Min / Max (ms)
                 },
 
-                ['Distance Ramp'] = {-- Move faster when closer to target
+                ['Distance Ramp'] = { -- Move faster when closer to target
                     ['Enabled'] = false,
-                    ['Base Speed'] = 0.6,-- Base speed multiplier
-                    ['Distance Range'] = {35, 125},-- Pixels (Min distance for max speed, Max distance for min speed)
+                    ['Base Speed'] = 0.6, -- Base speed multiplier
+                    ['Distance Range'] = {35, 125}, -- Pixels (Min distance for max speed, Max distance for min speed)
                 },
 
-                ['Readjustment'] = {-- Temporarily stops camlock when clicking / triggerbot fires
+                ['Readjustment'] = { -- Temporarily stops camlock when clicking / triggerbot fires
                     ['Enabled'] = false,
-                    ['Triggerbot'] = true,-- Stop when triggerbot fires
-                    ['Mouse Click'] = true,-- Stop when Mouse is clicked
-                    ['Delay'] = { {15, 25} },-- Min / Max (ms)
+                    ['Triggerbot'] = true, -- Stop when triggerbot fires
+                    ['Mouse Click'] = true, -- Stop when Mouse is clicked
+                    ['Delay'] = { {15, 25} }, -- Min / Max (ms)
                 },
 
                 ['Speed Ramp'] = { -- Scales aim speed based on how fast the target character is moving
                     ['Enabled'] = false,
-                    ['Speed Range'] = { {4, 20} },-- Min / Max target speed (studs/s)
-                    ['Multiplier Range'] = { {1.0, 1.5} },-- Min / Max aim speed multiplier
+                    ['Speed Range'] = { {4, 20} }, -- Min / Max target speed (studs/s)
+                    ['Multiplier Range'] = { {1.0, 1.5} }, -- Min / Max aim speed multiplier
                 },
 
-                ['Mouse Blend'] = {-- Blends aimbot with your Mouse movement
+                ['Mouse Blend'] = { -- Blends aimbot with your Mouse movement
                     ['Enabled'] = false,
-                    ['Blend Factor'] = 0.3,-- How much to blend (0 = aimbot-controlled, 1 = Mouse-controlled)
+                    ['Blend Factor'] = 0.3, -- How much to blend (0 = aimbot-controlled, 1 = Mouse-controlled)
                 },
 
             },
@@ -239,46 +253,46 @@ getgenv()['Prosper'] = {
             },
 
             ['FOV'] = {
-                ['FOV Type'] = "Circle",-- 2D // 3D // Circle
-                ['FOV Mode'] = "Simple",-- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Type'] = "Circle", -- 2D // 3D // Circle
+                ['FOV Mode'] = "Simple", -- Simple is normal, Advanced is a Split FOV (better for legit fov's).
                 ['Show FOV'] = false,
                 ['Show Deadzone FOV'] = false,
 
                 ['Circle'] = { ['Radius'] = 125,  ['Deadzone Radius'] = 35 },
 
                 ['2D'] = {
-                    ['Simple'] = { {1, 2} },-- X // Y
+                    ['Simple'] = { {1, 2} }, -- X // Y
                     ['Advanced'] = {
-                        ['X'] = {1, 2},-- Left // Right
-                        ['Y'] = {1, 2},-- Up // Down
+                        ['X'] = {1, 2}, -- Left // Right
+                        ['Y'] = {1, 2}, -- Up // Down
                     },
                     ['Deadzone'] = {
                         ['Mode'] = "Simple",
-                        ['Simple'] = { {1, 2} },-- X // Y
+                        ['Simple'] = { {1, 2} }, -- X // Y
                         ['Advanced'] = {
-                            ['X'] = {1, 2},-- Left // Right
-                            ['Y'] = {1, 2},-- Up // Down
+                            ['X'] = {1, 2}, -- Left // Right
+                            ['Y'] = {1, 2}, -- Up // Down
                         }
                     }
                 },
 
                 ['3D'] = {
-                    ['Simple'] = {3, 5, 3},-- X // Y // Z
+                    ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                     ['Advanced'] = {
-                        ['X'] = {1.5, 1.8},-- Left // Right 
-                        ['Y'] = {1, 2},-- Up // Down
-                        ['Z'] = {1, 2},-- Left // Right (Side of Player)
+                        ['X'] = {1.5, 1.8}, -- Left // Right 
+                        ['Y'] = {1, 2}, -- Up // Down
+                        ['Z'] = {1, 2}, -- Left // Right (Side of Player)
                     },
 
                     ['Deadzone'] = {
                         ['Mode'] = "Simple", 
-                        ['Simple'] = {3, 5, 3},-- X // Y // Z
+                        ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                       ['Advanced'] = {
-                         ['X'] = {1.5, 1.8},-- Left // Right 
-                         ['Y'] = {1, 2},-- Up // Down
-                         ['Z'] = {1, 2},-- Left // Right (Side of Player)
+                         ['X'] = {1.5, 1.8}, -- Left // Right 
+                         ['Y'] = {1, 2}, -- Up // Down
+                         ['Z'] = {1, 2},  -- Left // Right (Side of Player)
                       },
                     },
                 },
@@ -286,19 +300,15 @@ getgenv()['Prosper'] = {
         },
 
         ['Trigger Bot'] = {
-            ['Enabled'] = true,-- Trigger Bot toggle
+            ['Enabled'] = true, -- Trigger Bot toggle
             ['Range'] = 200, 
             ['Settings'] = {
-                ['Mode'] = "Hold",-- Always // Hold // Toggle
-                ['Type'] = "FOV"-- FOV // Exact
+                ['Mode'] = "Hold", -- Always // Hold // Toggle
+                ['Type'] = "Exact" -- FOV // Exact
             },
 
             ['Prediction'] = {
                 ['Enabled'] = false,
-                ['Y Axis'] = "Legit",-- Legit // Very Legit // Half // Full
-                ['Auto Prediction'] = {
-                    ['Enabled'] = false,
-                },
                 ['Values'] = {
                     ['X'] = 0.1,
                     ['Y'] = 0.1,
@@ -306,64 +316,70 @@ getgenv()['Prosper'] = {
                 },
             },
 
-            ['Weapon Delays'] = {-- You can put any weapon in their proper category, if the weapon you're using isn't in here, it acts as 0 delay.
+            ['Weapon Delays'] = { -- You can put any weapon in their proper category, if the weapon you're using isn't in here, it acts as 0 delay.
                 ['Shotguns'] = { 
                     ['Weapons'] = { 'Double-Barrel SG', 'TacticalShotgun' },
-                    ['Enabled'] = false,-- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15},-- Randomized delay when first shooting (ms)
-                    ['Mouse'] = {true, 5, 10},-- Randomized delay when mouse is inside exact hitbox / fov (ms)
-                    ['Shoot'] = {true, 30, 40},-- Randomized delay when shooting (ms)
-                    ['Tool Switch'] = {true, 20, 30},-- Randomized delay when switching to this weapon (ms)
-                    ['Target Switch'] = {false, 15, 20}-- Randomized delay when switching targets (ms)
+                    ['Enabled'] = false, -- If delay is on or off for these guns.
+                    ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
+                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when mouse is inside exact hitbox / fov (ms)
+                    ['Shoot'] = {true, 30, 40}, -- Randomized delay when shooting (ms)
+                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay when switching to this weapon (ms)
+                    ['Target Switch'] = {false, 15, 20} -- Randomized delay when switching targets (ms)
                 },
                 ['Pistols'] = {
                     ['Weapons'] = { 'Revolver', 'Silencer' },
-                    ['Enabled'] = false,-- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15},-- Randomized delay when first shooting (ms)
-                    ['Mouse'] = {true, 5, 10},-- Randomized delay when mouse is inside exact hitbox / fov (ms)
-                    ['Shoot'] = {true, 30, 40},-- Randomized delay when shooting (ms)
-                    ['Tool Switch'] = {true, 20, 30},-- Randomized delay when switching to this weapon (ms)
-                    ['Target Switch'] = {false, 15, 20}-- Randomized delay when switching targets (ms)
+                    ['Enabled'] = false, -- If delay is on or off for these guns.
+                    ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
+                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when mouse is inside exact hitbox / fov (ms)
+                    ['Shoot'] = {true, 30, 40}, -- Randomized delay when shooting (ms)
+                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay when switching to this weapon (ms)
+                    ['Target Switch'] = {false, 15, 20} -- Randomized delay when switching targets (ms)
                 },
                 ['Others'] = {
                     ['Weapons'] = { 'Deagle', 'Rifle' },
-                    ['Enabled'] = false,-- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15},-- Randomized delay when first shooting (ms)
-                    ['Mouse'] = {true, 5, 10},-- Randomized delay when mouse is inside exact hitbox / fov (ms)
-                    ['Shoot'] = {true, 30, 40},-- Randomized delay when shooting (ms)
-                    ['Tool Switch'] = {true, 20, 30},-- Randomized delay when switching to this weapon (ms)
-                    ['Target Switch'] = {false, 15, 20}-- Randomized delay when switching targets (ms)
+                    ['Enabled'] = false, -- If delay is on or off for these guns.
+                    ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
+                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when mouse is inside exact hitbox / fov (ms)
+                    ['Shoot'] = {true, 30, 40}, -- Randomized delay when shooting (ms)
+                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay when switching to this weapon (ms)
+                    ['Target Switch'] = {false, 15, 20} -- Randomized delay when switching targets (ms)
                 },
             },
 
     
            ['FOV'] = {-- FOV's
-                ['FOV Type'] = "2D",-- 2D // 3D
-                ['FOV Mode'] = "Advanced",-- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Type'] = "2D", -- 2D // 3D
+                ['FOV Mode'] = "Simple", -- Simple is normal, Advanced is a Split FOV (better for legit fov's).
                 ['Show FOV'] = false,
         
                 ['2D'] = {
-                    ['Simple'] = { {1, 2} },-- X // Y
+                    ['Simple'] = { {1, 2} }, -- X // Y
                     
                     ['Advanced'] = { 
-                        ['X'] = {1, 2},-- Left // Right
-                        ['Y'] = {1, 2},-- Up // Down
+                        ['X'] = {1, 2}, -- Left // Right
+                        ['Y'] = {1, 2}, -- Up // Down
                     }
                 },
 
                 ['3D'] = {
-                    ['Simple'] = {3, 5, 3},-- X // Y // Z
+                    ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                     ['Advanced'] = {
-                        ['X'] = {1.5, 1.8},-- Left // Right 
-                        ['Y'] = {1, 2},-- Up // Down
-                        ['Z'] = {1, 2},-- Left // Right (Side of Player)
+                        ['X'] = {1.5, 1.8}, -- Left // Right 
+                        ['Y'] = {1, 2}, -- Up // Down
+                        ['Z'] = {1, 2}, -- Left // Right (Side of Player)
                     }
                 }
             },
         },
 
         ['Gun Modifications'] = {
+            ['Void Falls'] = {
+                ['Bullet TP'] = { 
+                    ['Enabled'] = false,
+                },
+            },
+
             ['Delay Changer'] = {
                 ['Enabled'] = false,
                 ['Weapons'] = {
@@ -375,10 +391,10 @@ getgenv()['Prosper'] = {
 
             ['Spread Modifications'] = {
                 ['Enabled'] = false,
-                ['Mode'] = "Normal",-- Normal // Custom
+                ['Mode'] = "Normal", -- Normal // Custom
     
                 ['Double-Barrel SG'] = {
-                   ['Normal'] = { {30, 50} },-- Min // Max
+                   ['Normal'] = { {30, 50} }, -- Min // Max
                    ['Custom'] = {
                         ['X'] = { {0.5, 0.03, 0.03}, },
                         ['Y'] = { {0.5, 0.06, 0.06}, },
@@ -386,7 +402,7 @@ getgenv()['Prosper'] = {
                    },
                 },
                 ['TacticalShotgun'] = {
-                    ['Normal'] = { {30, 50} },-- Min // Max
+                    ['Normal'] = { {30, 50} }, -- Min // Max
                     ['Custom'] = {
                         ['X'] = { {0.5, 0.03, 0.03}, },
                         ['Y'] = { {0.5, 0.06, 0.06}, },
@@ -394,7 +410,7 @@ getgenv()['Prosper'] = {
                     },
                 },
                 ['Shotgun'] = {
-                    ['Normal'] = { {30, 50} },-- Min // Max
+                    ['Normal'] = { {30, 50} }, -- Min // Max
                     ['Custom'] = {
                         ['X'] = { {0.5, 0.03, 0.03}, },
                         ['Y'] = { {0.5, 0.06, 0.06}, },
@@ -405,7 +421,7 @@ getgenv()['Prosper'] = {
 
             ['Damage Override'] = { 
                 ['Enabled'] = false,
-                ['Weapons'] = {-- Full // Half // Min // Normal
+                ['Weapons'] = { -- Full // Half // Min // Normal
                     ['[Revolver]'] = { ['Mode'] = 'Full' },
                     ['[Double-Barrel SG]'] = { ['Mode'] = 'Full' },
                     ['[TacticalShotgun]'] = { ['Mode'] = 'Full' },
@@ -418,51 +434,51 @@ getgenv()['Prosper'] = {
 
         ['ESP'] = {
             ['Enabled'] = true,
-            ['Numbers'] = true,-- Numbers for Health & Armor Bar
-            ['Numbers Size'] = 9,-- Size for Health & Armor numbers
+            ['Numbers'] = true, -- Numbers for Health & Armor Bar
+            ['Numbers Size'] = 9, -- Size for Health & Armor numbers
             ['Color'] = Color3.fromRGB(255, 255, 255),
             ['OutlineColor'] = Color3.fromRGB(0, 0, 0),
 
             ['Box'] = {
                 ['Enabled'] = false,
-                ['Type'] = 'Bounding',-- Bounding // Static
-                ['Box Mode'] = 'Corner'-- Corner // Box
+                ['Type'] = 'Bounding', -- Bounding // Static
+                ['Box Mode'] = 'Corner' -- Corner // Box
             },
 
             ['Health'] = {
                 ['Enabled'] = true,
-                ['Position'] = 'Bottom',-- Top // Bottom // Left // Right
-                ['Mode'] = 'All',-- All // Current Target
+                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
+                ['Mode'] = 'All', -- All // Current Target
             },
 
             ['Distance'] = {
                 ['Enabled'] = false,
-                ['Position'] = 'Bottom',-- Top // Bottom // Left // Right
-                ['Font'] = "GothamBold",--[[ https://create.roblox.com/docs/reference/engine/enums/Font ]]
+                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
+                ['Font'] = "GothamBold", --[[ https://create.roblox.com/docs/reference/engine/enums/Font ]]
                 ['Size'] = 9,
             },
 
             ['Names'] = {
                 ['Enabled'] = true,
-                ['Type'] = 'DisplayName',-- Name // DisplayName // Both
-                ['Position'] = 'Bottom',-- Top // Bottom // Left // Right
-                ['Font'] = "GothamBold",--[[ https://create.roblox.com/docs/reference/engine/enums/Font ]]
+                ['Type'] = 'DisplayName', -- Name // DisplayName // Both
+                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
+                ['Font'] = "GothamBold", --[[ https://create.roblox.com/docs/reference/engine/enums/Font ]]
                 ['Size'] = 9,
             },
 
             ['Armor'] = {
                 ['Enabled'] = true,
-                ['Position'] = 'Bottom',-- Top // Bottom // Left // Right
-                ['Mode'] = 'All',-- All // Current Target
+                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
+                ['Mode'] = 'All', -- All // Current Target
             },
 
-            ['Targeting'] = {-- Colors for who you're targeted at based on Target Modes
+            ['Targeting'] = { -- Colors for who you're targeted at based on Target Modes
                 ['Target'] = Color3.fromRGB(0, 255, 0),
                 ['Automatic'] = Color3.fromRGB(255, 0, 0)
             },
         },
 
-        ['Skin Changer'] = {-- changes ur skins (Client-sided)
+        ['Skin Changer'] = { -- changes ur skins (Client-sided)
             ['Enabled'] = true,
             ['Weapons'] = {
                 ['[Revolver]'] = 'Galaxy',
@@ -470,7 +486,7 @@ getgenv()['Prosper'] = {
                 ['[TacticalShotgun]'] = 'Galaxy',
                 ['[Knife]'] = 'Love Kukri'
             },
-            ['Beams'] = {-- Hood Customs Only 
+            ['Beams'] = { -- Hood Customs Only 
                 ['[Revolver]'] = 'Rainbow',
                 ['[Double-Barrel SG]'] = 'Rainbow',
                 ['[TacticalShotgun]'] = 'Rainbow',
@@ -480,7 +496,12 @@ getgenv()['Prosper'] = {
 
         ['Inventory Sorter'] = {
             ['Enabled'] = true,
-            ['Order'] = { '[Revolver]', '[Double-Barrel SG]','[TacticalShotgun]', '[Knife]', },
+            ['Order'] = { -- You can add as many slots as needed.
+                [1] = '[Double-Barrel SG]',
+                [2] = '[Revolver]',
+                [3] = '[TacticalShotgun]',
+                [4] = '[Knife]',
+            },
         },
 
         ['Character Modifications'] = {
@@ -488,7 +509,7 @@ getgenv()['Prosper'] = {
             ['Speed Bypass'] = { ['Enabled'] = false },
             ['Speed Modifications'] = {
                 ['Enabled'] = true,
-                ['Mode'] = 'Velocity',-- Humanoid or Velocity
+                ['Mode'] = 'Velocity', -- Humanoid // Velocity
                 ['Multipliers'] = {
                     ['Normal'] = { ['Multiplier'] = 37.5 },
                     ['Shooting'] = { ['Multiplier'] = 37.5 },
@@ -507,7 +528,7 @@ getgenv()['Prosper'] = {
             },
             ['Wall Jump'] = {
                 ['Enabled'] = true,
-                ['Mode'] = 'Infinite',-- Infinite or Double
+                ['Mode'] = 'Infinite', -- Infinite or Double
                 ['Spiderman'] = false,
                 ['Multipliers'] = {
                     ['Regular'] = { ['Multiplier'] = 1.2 },
