@@ -91,7 +91,7 @@ getgenv()['Prosper'] = {
         },
 
         ['Hitbox Expander'] = {
-            ['Enabled'] = true,
+            ['Enabled'] = false,
             ['Show Hitbox'] = true,
             ['Weapons'] = {
                 ['[Revolver]'] = { ['Size'] = {5, 5, 5}, ['Fix Blood'] = true }, -- X // Y // Z
@@ -125,7 +125,7 @@ getgenv()['Prosper'] = {
 
             ['FOV'] = {-- FOV's
                 ['FOV Type'] = "2D", -- 2D // 3D
-                ['FOV Mode'] = "Simple", -- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Mode'] = "Simple", -- Simple // Advanced
                 ['Show FOV'] = false,
 
                 ['2D'] = {
@@ -150,8 +150,16 @@ getgenv()['Prosper'] = {
         },
         
         ['Client Redirection'] = { -- ONLY works on emulated 0-delay games & Void-Falls.
-            ['Enabled'] = true, 
-            ['Weapons'] = { '[rev]', '[Silencer]', '[Glock]' } 
+            ['Enabled'] = true,
+            ['Weapons'] = { '[rev]', '[Silencer]', '[Glock]' },
+            ['Prediction'] = { -- Void Falls Exclusive
+                ['Enabled'] = false,
+                ['Values'] = { 
+                    ['X'] = 0.1,
+                    ['Y'] = 0,
+                    ['Z'] = 0.1,
+                },
+            },
         },
 
         ['Camera Aimbot'] = {
@@ -199,7 +207,7 @@ getgenv()['Prosper'] = {
             },
 
             ['Bezier'] = {
-                ['Mode'] = "Low", -- "Linear" / "Low" / "Mid" / "High" / "Curve"
+                ['Mode'] = "Low", -- Linear // Low // Mid // High // Curve
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
@@ -210,32 +218,32 @@ getgenv()['Prosper'] = {
 
                 ['Snap Delay'] = { -- Delay while snapping onto the person
                     ['Enabled'] = false,
-                    ['Delay'] = { {20, 20} }, -- Min / Max (ms)
+                    ['Delay'] = { {20, 20} }, -- Min // Max (ms)
                     ['Multiplier'] = 1, -- How fast your camlock moves after the delay (higher = snappier, lower = smoother)
                 },
 
                 ['Target Switch Delay'] = { -- Delay when switching to a different target
                     ['Enabled'] = false,
-                    ['Delay'] = { {15, 25} } -- Min / Max (ms)
+                    ['Delay'] = { {15, 25} } -- Min // Max (ms)
                 },
 
                 ['Distance Ramp'] = { -- Move faster when closer to target
                     ['Enabled'] = false,
                     ['Base Speed'] = 0.6, -- Base speed multiplier
-                    ['Distance Range'] = {35, 125}, -- Pixels (Min distance for max speed, Max distance for min speed)
+                    ['Distance Range'] = {35, 125}, -- Min (px) // Max (px)
                 },
 
                 ['Readjustment'] = { -- Temporarily stops camlock when clicking / triggerbot fires
                     ['Enabled'] = false,
                     ['Triggerbot'] = true, -- Stop when triggerbot fires
                     ['Mouse Click'] = true, -- Stop when Mouse is clicked
-                    ['Delay'] = { {15, 25} }, -- Min / Max (ms)
+                    ['Delay'] = { {15, 25} }, -- Min // Max (ms)
                 },
 
                 ['Speed Ramp'] = { -- Scales aim speed based on how fast the target character is moving
                     ['Enabled'] = false,
-                    ['Speed Range'] = { {4, 20} }, -- Min / Max target speed (studs/s)
-                    ['Multiplier Range'] = { {1.0, 1.5} }, -- Min / Max aim speed multiplier
+                    ['Speed Range'] = { {4, 20} }, -- Min // Max (studs/s)
+                    ['Multiplier Range'] = { {1.0, 1.5} }, -- Min // Max
                 },
 
                 ['Mouse Blend'] = { -- Blends aimbot with your Mouse movement
@@ -254,7 +262,7 @@ getgenv()['Prosper'] = {
 
             ['FOV'] = {
                 ['FOV Type'] = "Circle", -- 2D // 3D // Circle
-                ['FOV Mode'] = "Simple", -- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Mode'] = "Simple", -- Simple // Advanced
                 ['Show FOV'] = false,
                 ['Show Deadzone FOV'] = false,
 
@@ -267,7 +275,7 @@ getgenv()['Prosper'] = {
                         ['Y'] = {1, 2}, -- Up // Down
                     },
                     ['Deadzone'] = {
-                        ['Mode'] = "Simple",
+                        ['Mode'] = "Simple", -- Simple // Advanced
                         ['Simple'] = { {1, 2} }, -- X // Y
                         ['Advanced'] = {
                             ['X'] = {1, 2}, -- Left // Right
@@ -286,7 +294,7 @@ getgenv()['Prosper'] = {
                     },
 
                     ['Deadzone'] = {
-                        ['Mode'] = "Simple", 
+                        ['Mode'] = "Simple", -- Simple // Advanced 
                         ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                       ['Advanced'] = {
@@ -349,7 +357,7 @@ getgenv()['Prosper'] = {
     
            ['FOV'] = {-- FOV's
                 ['FOV Type'] = "2D", -- 2D // 3D
-                ['FOV Mode'] = "Simple", -- Simple is normal, Advanced is a Split FOV (better for legit fov's).
+                ['FOV Mode'] = "Simple", -- Simple // Advanced
                 ['Show FOV'] = false,
         
                 ['2D'] = {
