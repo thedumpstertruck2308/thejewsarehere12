@@ -49,6 +49,7 @@ getgenv()['Prosper'] = {
             ['Spawn Protection Check'] = false, 
             ['Grabbed Check'] = true, 
             ['Crew Check'] = true, 
+            ['On Screen'] = true, 
         },
 
         ['Target Mode Checks'] = {
@@ -152,7 +153,7 @@ getgenv()['Prosper'] = {
         ['Client Redirection'] = { -- ONLY works on emulated 0-delay games & Void-Falls.
             ['Enabled'] = true,
             ['Weapons'] = { '[rev]', '[Silencer]', '[Glock]' },
-            ['Prediction'] = { -- Void Falls Exclusive
+            ['Prediction'] = { -- Void Falls ONLY
                 ['Enabled'] = false,
                 ['Values'] = { 
                     ['X'] = 0.1,
@@ -197,7 +198,7 @@ getgenv()['Prosper'] = {
                 ['Advanced'] = {
                     ['Strength'] = { {0.24, 0.26} }, -- X // Y 
 
-                    ['Sensitivity'] = 0.22 -- This is how fast / slow the Camera aimbot moves (Like sensitivity)
+                    ['Sensitivity'] = 0.22 -- Gain on Strength: 1 = Strength unchanged // below 1 slower // above 1 snappier (saturates, never overshoots)
                 }
             },
 
