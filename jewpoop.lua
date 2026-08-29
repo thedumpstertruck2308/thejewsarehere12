@@ -198,7 +198,7 @@ getgenv()['Prosper'] = {
                 ['Advanced'] = {
                     ['Strength'] = { {0.24, 0.26} }, -- X // Y 
 
-                    ['Sensitivity'] = 0.22 -- Gain on Strength: 1 = Strength unchanged // below 1 slower // above 1 snappier (saturates, never overshoots)
+                    ['Sensitivity'] = 0.22 
                 }
             },
 
