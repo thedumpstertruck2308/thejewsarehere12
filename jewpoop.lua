@@ -1,3 +1,13 @@
+--[[
+Just a few notes:
+
+The tables with the "X // Y" comment something like { {1, 2} }, -- X // Y will be first value X, second value Y, and if there's also a Z axis that'd be the third one.
+Likewise for delay tables with 2 values shown above, the first value will be minimum delay (the least amount of delay you want), and the second value will be the maximum delay (the most amount of delay you want).
+Prediction isn't needed if you're in a 0 delay game, and if you're in a 0 delay game, only use Future if you're speedwalking around, or it will not be noticeable. 
+If you get a warning like [Prosper] failed to parse website config :LineNumber: it is a config issue on the website, and check that line. The lines are numbered on the left.
+Everything that needs to be defined is defined, just read how the features work.
+
+]]
 getgenv()['Prosper'] = {
         ['Extras'] = {
             ["Mod Detector"] = {
@@ -12,8 +22,8 @@ getgenv()['Prosper'] = {
         },
 
         ["Character"] = {
-           ['Avatar Spoofer'] = { -- Use the same body type as your target or this will break.
-              ['Enabled'] = true,
+           ['Avatar Spoofer'] = { 
+              ['Enabled'] = false,
               ['Target'] = "prosperity1019", -- Username / UserID
               ['Skinny'] = true, -- Makes your spoofed avatar skinny.
             },
@@ -198,7 +208,7 @@ getgenv()['Prosper'] = {
                 ['Advanced'] = {
                     ['Strength'] = { {0.24, 0.26} }, -- X // Y 
 
-                    ['Sensitivity'] = 0.22 
+                    ['Sensitivity'] = 67 -- % of sensitivity based on the strength you use.
                 }
             },
 
@@ -208,7 +218,8 @@ getgenv()['Prosper'] = {
             },
 
             ['Bezier'] = {
-                ['Mode'] = "Low", -- Linear // Low // Mid // High // Curve
+                ['Mode'] = "Low", -- Linear // Low // Mid // High // Curve // Custom
+                ['Custom'] = { ['Offset X'] = {0.8}, ['Offset Y'] = {0.4}, ['Offset Z'] = {-0.3} },
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
@@ -254,7 +265,7 @@ getgenv()['Prosper'] = {
 
             },
 
-            ['Camera Aimbot Conditions'] = {
+            ['Camera Aimbot Conditions'] = { -- These conditions are meant for legit cheating, but use these for what type of playstyle if you main.
                 ['First Person'] = true,
                 ['Third Person'] = false,
                 ['Right Click'] = false,
@@ -441,44 +452,56 @@ getgenv()['Prosper'] = {
 
         },
 
+        ['Fonts'] = { -- Fonts for certain kinds of ESP categories.
+            --[[ Custom  -> Proggy Clean // Smallest Pixel-7 // Tahoma // Minecraftia // TahomaBold ]]
+            --[[ Drawing -> UI // System // Plain // Monospace ]]
+            --[[ Roblox  -> https://create.roblox.com/docs/reference/engine/enums/Font ]]
+            ['ESP Names'] = { 'Custom', 'Smallest Pixel-7', 12 }, -- Format: { Font Type, Font, Text Size }
+            ['ESP Numbers'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
+            ['ESP Distance'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
+            ['Information'] = { 'Custom', 'TahomaBold', 12 }, -- Format: { Font Type, Font, Text Size }
+        },
+
+        ['Information'] = { 
+            ['Enabled'] = true,
+            ['Theme'] = 'Default', -- Default // Aurora // Sunset // Ocean // Mono
+            ['Position'] = 'Default', -- Default // Top Middle // Middle Left // Middle Right
+            ['Watermark'] = '/prosperlol',
+        },
+
         ['ESP'] = {
             ['Enabled'] = true,
-            ['Numbers'] = true, -- Numbers for Health & Armor Bar
-            ['Numbers Size'] = 9, -- Size for Health & Armor numbers
+            ['Numbers'] = false, -- Numbers for Health & Armor Bar
             ['Color'] = Color3.fromRGB(255, 255, 255),
             ['OutlineColor'] = Color3.fromRGB(0, 0, 0),
 
             ['Box'] = {
-                ['Enabled'] = false,
-                ['Type'] = 'Bounding', -- Bounding // Static
+                ['Enabled'] = true,
+                ['Type'] = 'Dynamic', -- Dynamic // Static
                 ['Box Mode'] = 'Corner' -- Corner // Box
             },
 
             ['Health'] = {
                 ['Enabled'] = true,
-                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
-                ['Mode'] = 'All', -- All // Current Target
+                ['Position'] = 'Left', -- Top // Bottom // Left // Right
+                ['Mode'] = 'Current Target', -- All // Current Target
             },
 
             ['Distance'] = {
-                ['Enabled'] = false,
+                ['Enabled'] = true,
                 ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
-                ['Font'] = "GothamBold", --[[ https://create.roblox.com/docs/reference/engine/enums/Font ]]
-                ['Size'] = 9,
             },
 
             ['Names'] = {
                 ['Enabled'] = true,
-                ['Type'] = 'DisplayName', -- Name // DisplayName // Both
+                ['Type'] = 'Both', -- Name // DisplayName // Both
                 ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
-                ['Font'] = "GothamBold", --[[ https://create.roblox.com/docs/reference/engine/enums/Font ]]
-                ['Size'] = 9,
             },
 
             ['Armor'] = {
-                ['Enabled'] = true,
-                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
-                ['Mode'] = 'All', -- All // Current Target
+                ['Enabled'] = false,
+                ['Position'] = 'Right', -- Top // Bottom // Left // Right
+                ['Mode'] = 'Current Target', -- All // Current Target
             },
 
             ['Targeting'] = { -- Colors for who you're targeted at based on Target Modes
@@ -495,6 +518,7 @@ getgenv()['Prosper'] = {
                 ['[TacticalShotgun]'] = 'Galaxy',
                 ['[Knife]'] = 'Love Kukri'
             },
+
             ['Beams'] = { -- Hood Customs Only 
                 ['[Revolver]'] = 'Rainbow',
                 ['[Double-Barrel SG]'] = 'Rainbow',
@@ -526,6 +550,7 @@ getgenv()['Prosper'] = {
                     ['Low Health'] = { ['Multiplier'] = 37.5 },
                 },
             },
+
             ['Jump Modifications'] = {
                 ['Enabled'] = true,
                 ['Multipliers'] = {
@@ -535,6 +560,7 @@ getgenv()['Prosper'] = {
                     ['Low Health'] = { ['Multiplier'] = 1 },
                 },
             },
+
             ['Wall Jump'] = {
                 ['Enabled'] = true,
                 ['Mode'] = 'Infinite', -- Infinite or Double
@@ -545,6 +571,7 @@ getgenv()['Prosper'] = {
                 },
             },
         },
+
         ['Anti Trip'] = true,
         ['No Jump Cooldown'] = true,
         ['Panic Ground'] = false,
