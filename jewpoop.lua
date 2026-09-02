@@ -3,7 +3,7 @@ Just a few notes:
 
 The tables with the "X // Y" comment something like { {1, 2} }, -- X // Y will be first value X, second value Y, and if there's also a Z axis that'd be the third one.
 Likewise for delay tables with 2 values shown above, the first value will be minimum delay (the least amount of delay you want), and the second value will be the maximum delay (the most amount of delay you want).
-Prediction isn't needed if you're in a 0 delay game, and if you're in a 0 delay game, only use Future if you're speedwalking around, or it will not be noticeable. 
+Prediction isn't needed if you're in a 0 delay game, and if you're in a 0 delay game, only use Future if you're speedwalking around, or it will not be noticeable.
 If you get a warning like [Prosper] failed to parse website config :LineNumber: it is a config issue on the website, and check that line. The lines are numbered on the left.
 Everything that needs to be defined is defined, just read how the features work.
 
@@ -22,52 +22,52 @@ getgenv()['Prosper'] = {
         },
 
         ["Character"] = {
-           ['Avatar Spoofer'] = { 
+           ['Avatar Spoofer'] = {
               ['Enabled'] = false,
               ['Target'] = "prosperity1019", -- Username / UserID
               ['Skinny'] = true, -- Makes your spoofed avatar skinny.
             },
-            ["Headless"] = true, 
-            ["Korblox"] = false, 
+            ["Headless"] = true,
+            ["Korblox"] = false,
         },
 
-        ["Keybinds"] = { 
+        ["Keybinds"] = {
             ['Combat'] = {
-               ['Target'] = "C", 
-               ['Camera Aimbot'] = "C", 
+               ['Target'] = "C",
+               ['Camera Aimbot'] = "C",
                ['Triggerbot'] = "C",
             },
-            
+
             ['Visuals'] = { ['ESP'] = "T", },
 
             ['Movement'] = {
-               ['Speed'] = "V", 
-               ['Jump'] = "J", 
+               ['Speed'] = "V",
+               ['Jump'] = "J",
                ['Panic Ground'] = "K",
             },
 
              ['Utilities'] = {  ['Inventory Sorter'] = "F2" },
         },
-        
+
         ['Targeting'] = {
             ['Target Mode'] = 'Automatic', -- Automatic // Target
         },
 
         ["Universal Checks"] = {
-            ['Knock Check'] = true, 
-            ['Self Knock Check'] = true, 
-            ['Spawn Protection Check'] = false, 
-            ['Grabbed Check'] = true, 
-            ['Crew Check'] = true, 
-            ['On Screen'] = true, 
+            ['Knock Check'] = true,
+            ['Self Knock Check'] = true,
+            ['Spawn Protection Check'] = false,
+            ['Grabbed Check'] = true,
+            ['Crew Check'] = true,
+            ['On Screen'] = true,
         },
 
         ['Target Mode Checks'] = {
             ['Automatic'] = { -- Automatic Mode Specific Checks
                 ['Visible Check'] = true,
-                ['Distance Check'] = false, 
+                ['Distance Check'] = false,
             },
-        
+
             ['Target'] = { -- Target Mode Specific Checks
                 ['Visible Check'] = false,
                 ['Distance Check'] = false,
@@ -76,22 +76,22 @@ getgenv()['Prosper'] = {
                 ['Ignore Knocked'] = false,
             },
         },
-        
+
         ['Future'] = { -- Helps with blanking, use when raging though.
             ['Enabled'] = true,
             ['Guns'] = {
-                 ['[Revolver]'] = { 
-                    ['Enabled'] = false, 
+                 ['[Revolver]'] = {
+                    ['Enabled'] = false,
                     ['Scale'] = 1, -- Multiplier
                  },
 
-                 ['[Double-Barrel SG]'] = { 
-                    ['Enabled'] = false, 
+                 ['[Double-Barrel SG]'] = {
+                    ['Enabled'] = false,
                     ['Scale'] = 1,-- Multiplier
                  },
 
-                 ['[TacticalShotgun]'] = { 
-                    ['Enabled'] = false, 
+                 ['[TacticalShotgun]'] = {
+                    ['Enabled'] = false,
                     ['Scale'] = 1,-- Multiplier
                  },
             }
@@ -113,7 +113,7 @@ getgenv()['Prosper'] = {
 
         ['Silent Aimbot'] = {
             ['Enabled'] = true,
-            ['Range'] = 1000, 
+            ['Range'] = 1000,
             ['Hit Part'] = "Closest", -- Closest // Part Name
             ['Closest'] = {
                 ['Mode'] = "Point", -- Part // Point
@@ -121,16 +121,16 @@ getgenv()['Prosper'] = {
 				['Raycast'] = true, -- Will give you the 1:1 mouse position, and will ignore scale.
             },
             ['Prediction'] = { -- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
-				['Enabled'] = false, 
+				['Enabled'] = false,
 				['Y Axis'] = "Full", -- Legit // Very Legit // Half // Full
 				['Auto Prediction'] = {
 				    ['Enabled'] = true, -- If this is true, values don't apply
 				    ['Scale'] = 1, -- Multiplier
 				},
 				['Values'] = {
-					['X'] = 0.1, 
-					['Y'] = 0.1, 
-					['Z'] = 0.1	
+					['X'] = 0.1,
+					['Y'] = 0.1,
+					['Z'] = 0.1
 				},
 			 },
 
@@ -159,13 +159,13 @@ getgenv()['Prosper'] = {
                 }
             }
         },
-        
+
         ['Client Redirection'] = { -- ONLY works on emulated 0-delay games & Void-Falls.
             ['Enabled'] = true,
             ['Weapons'] = { '[rev]', '[Silencer]', '[Glock]' },
             ['Prediction'] = { -- Void Falls ONLY
                 ['Enabled'] = false,
-                ['Values'] = { 
+                ['Values'] = {
                     ['X'] = 0.1,
                     ['Y'] = 0,
                     ['Z'] = 0.1,
@@ -175,7 +175,7 @@ getgenv()['Prosper'] = {
 
         ['Camera Aimbot'] = {
             ['Enabled'] = true,
-            ['Range'] = 1000, 
+            ['Range'] = 1000,
             ['Mode'] = "Hold", -- Toggle / Hold / Always
             ['Sticky'] = false,
             ['Hit Part'] = "Closest", -- Closest // Part Name
@@ -198,7 +198,7 @@ getgenv()['Prosper'] = {
                 },
             },
 
-            ['Snappiness'] = { 
+            ['Snappiness'] = {
                 ['Enabled'] = true,
                 ['Type'] = 'Simple', -- Simple // Advanced
                 ['Curve Type'] = 'Bezier', -- Bezier // Easing
@@ -206,7 +206,7 @@ getgenv()['Prosper'] = {
                 ['Simple'] = { {0.124, 0.111} }, -- X // Y
 
                 ['Advanced'] = {
-                    ['Strength'] = { {0.24, 0.26} }, -- X // Y 
+                    ['Strength'] = { {0.24, 0.26} }, -- X // Y
 
                     ['Sensitivity'] = 67 -- % of sensitivity based on the strength you use.
                 }
@@ -225,7 +225,7 @@ getgenv()['Prosper'] = {
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
-                    ['Snappiness'] = { {0.5, 0.5} } -- X // Y 
+                    ['Snappiness'] = { {0.5, 0.5} } -- X // Y
                 },
 
                 ['Snap Delay'] = { -- Delay while snapping onto the person
@@ -300,17 +300,17 @@ getgenv()['Prosper'] = {
                     ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                     ['Advanced'] = {
-                        ['X'] = {1.5, 1.8}, -- Left // Right 
+                        ['X'] = {1.5, 1.8}, -- Left // Right
                         ['Y'] = {1, 2}, -- Up // Down
                         ['Z'] = {1, 2}, -- Left // Right (Side of Player)
                     },
 
                     ['Deadzone'] = {
-                        ['Mode'] = "Simple", -- Simple // Advanced 
+                        ['Mode'] = "Simple", -- Simple // Advanced
                         ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                       ['Advanced'] = {
-                         ['X'] = {1.5, 1.8}, -- Left // Right 
+                         ['X'] = {1.5, 1.8}, -- Left // Right
                          ['Y'] = {1, 2}, -- Up // Down
                          ['Z'] = {1, 2},  -- Left // Right (Side of Player)
                       },
@@ -321,7 +321,7 @@ getgenv()['Prosper'] = {
 
         ['Trigger Bot'] = {
             ['Enabled'] = true, -- Trigger Bot toggle
-            ['Range'] = 200, 
+            ['Range'] = 200,
             ['Settings'] = {
                 ['Mode'] = "Hold", -- Always // Hold // Toggle
                 ['Type'] = "Exact" -- FOV // Exact
@@ -337,7 +337,7 @@ getgenv()['Prosper'] = {
             },
 
             ['Weapon Delays'] = { -- You can put any weapon in their proper category, if the weapon you're using isn't in here, it acts as 0 delay.
-                ['Shotguns'] = { 
+                ['Shotguns'] = {
                     ['Weapons'] = { 'Double-Barrel SG', 'TacticalShotgun' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
                     ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
@@ -366,16 +366,16 @@ getgenv()['Prosper'] = {
                 },
             },
 
-    
+
            ['FOV'] = {-- FOV's
                 ['FOV Type'] = "2D", -- 2D // 3D
                 ['FOV Mode'] = "Simple", -- Simple // Advanced
                 ['Show FOV'] = false,
-        
+
                 ['2D'] = {
                     ['Simple'] = { {1, 2} }, -- X // Y
-                    
-                    ['Advanced'] = { 
+
+                    ['Advanced'] = {
                         ['X'] = {1, 2}, -- Left // Right
                         ['Y'] = {1, 2}, -- Up // Down
                     }
@@ -385,7 +385,7 @@ getgenv()['Prosper'] = {
                     ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                     ['Advanced'] = {
-                        ['X'] = {1.5, 1.8}, -- Left // Right 
+                        ['X'] = {1.5, 1.8}, -- Left // Right
                         ['Y'] = {1, 2}, -- Up // Down
                         ['Z'] = {1, 2}, -- Left // Right (Side of Player)
                     }
@@ -395,7 +395,7 @@ getgenv()['Prosper'] = {
 
         ['Gun Modifications'] = {
             ['Void Falls'] = {
-                ['Bullet TP'] = { 
+                ['Bullet TP'] = {
                     ['Enabled'] = false,
                 },
             },
@@ -412,7 +412,7 @@ getgenv()['Prosper'] = {
             ['Spread Modifications'] = {
                 ['Enabled'] = false,
                 ['Mode'] = "Normal", -- Normal // Custom
-    
+
                 ['Double-Barrel SG'] = {
                    ['Normal'] = { {30, 50} }, -- Min // Max
                    ['Custom'] = {
@@ -439,7 +439,7 @@ getgenv()['Prosper'] = {
                 }
             },
 
-            ['Damage Override'] = { 
+            ['Damage Override'] = {
                 ['Enabled'] = false,
                 ['Weapons'] = { -- Full // Half // Min // Normal
                     ['[Revolver]'] = { ['Mode'] = 'Full' },
@@ -452,17 +452,17 @@ getgenv()['Prosper'] = {
 
         },
 
-        ['Fonts'] = { -- Fonts for certain kinds of ESP categories.
+        ['Fonts'] = { -- Fonts for certain kinds of ESP stuff.
             --[[ Custom  -> Proggy Clean // Smallest Pixel-7 // Tahoma // Minecraftia // TahomaBold ]]
             --[[ Drawing -> UI // System // Plain // Monospace ]]
-            --[[ Roblox  -> https://create.roblox.com/docs/reference/engine/enums/Font ]]
+            --[[ Roblox  -> Legacy // Arial // ArialBold // SourceSans // SourceSansBold // SourceSansLight // SourceSansItalic // Bodoni // Garamond // Cartoon // Code // Highway // SciFi // Arcade // Fantasy // Antique // SourceSansSemibold // Gotham // GothamMedium // GothamBold // GothamBlack // AmaticSC // Bangers // Creepster // DenkOne // Fondamento // FredokaOne // GrenzeGotisch // IndieFlower // JosefinSans // Jura // Kalam // LuckiestGuy // Merriweather // Michroma // Nunito // Oswald // PatrickHand // PermanentMarker // Roboto // RobotoCondensed // RobotoMono // Sarpanch // SpecialElite // TitilliumWeb // Ubuntu // BuilderSans // BuilderSansMedium // BuilderSansBold // BuilderSansExtraBold // Arimo // ArimoBold ]]
             ['ESP Names'] = { 'Custom', 'Smallest Pixel-7', 12 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Numbers'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Distance'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
             ['Information'] = { 'Custom', 'TahomaBold', 12 }, -- Format: { Font Type, Font, Text Size }
         },
 
-        ['Information'] = { 
+        ['Information'] = {
             ['Enabled'] = true,
             ['Theme'] = 'Default', -- Default // Aurora // Sunset // Ocean // Mono
             ['Position'] = 'Default', -- Default // Top Middle // Middle Left // Middle Right
@@ -519,13 +519,13 @@ getgenv()['Prosper'] = {
                 ['[Knife]'] = 'Love Kukri'
             },
 
-            ['Beams'] = { -- Hood Customs Only 
+            ['Beams'] = { -- Hood Customs Only
                 ['[Revolver]'] = 'Rainbow',
                 ['[Double-Barrel SG]'] = 'Rainbow',
                 ['[TacticalShotgun]'] = 'Rainbow',
             }
         },
-        ['Anti Stomp'] = { ['Enabled'] = true },    
+        ['Anti Stomp'] = { ['Enabled'] = true },
 
         ['Inventory Sorter'] = {
             ['Enabled'] = true,
