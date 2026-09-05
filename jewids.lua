@@ -2,7 +2,7 @@ return {
     [2788229376] = 'Da Hood',
     [93561369380394] = 'Das Hood',
     [100702124803290] = 'Des Hood',
-    [94800144025323] = 'Der Hood',
+    [96247461091106] = 'Der Hood',
     [9825515356] = 'Hood Customs',
     [138995385694035] = 'Hood Customs FFA',
     [71324444457408] = 'Da Uphill',
