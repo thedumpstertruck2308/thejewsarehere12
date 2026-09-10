@@ -1,13 +1,3 @@
---[[
-Just a few notes:
-
-The tables with the "X // Y" comment something like { {1, 2} }, -- X // Y will be first value X, second value Y, and if there's also a Z axis that'd be the third one.
-Likewise for delay tables with 2 values shown above, the first value will be minimum delay (the least amount of delay you want), and the second value will be the maximum delay (the most amount of delay you want).
-Prediction isn't needed if you're in a 0 delay game, and if you're in a 0 delay game, only use Future if you're speedwalking around, or it will not be noticeable.
-If you get a warning like [Prosper] failed to parse website config :LineNumber: it is a config issue on the website, and check that line. The lines are numbered on the left.
-Everything that needs to be defined is defined, just read how the features work.
-
-]]
 getgenv()['Prosper'] = {
         ['Extras'] = {
             ["Mod Detector"] = {
@@ -218,8 +208,7 @@ getgenv()['Prosper'] = {
             },
 
             ['Bezier'] = {
-                ['Mode'] = "Low", -- Linear // Low // Mid // High // Curve // Custom
-                ['Custom'] = { ['Offset X'] = {0.8}, ['Offset Y'] = {0.4}, ['Offset Z'] = {-0.3} },
+                ['Mode'] = "Low", -- Linear // Low // Mid // High // Curve
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
@@ -439,6 +428,10 @@ getgenv()['Prosper'] = {
                 }
             },
 
+            ['No Spread'] = { -- Used for Hood Customs.
+                ['Enabled'] = false,
+            },
+
             ['Damage Override'] = {
                 ['Enabled'] = false,
                 ['Weapons'] = { -- Full // Half // Min // Normal
@@ -542,7 +535,9 @@ getgenv()['Prosper'] = {
             ['Speed Bypass'] = { ['Enabled'] = false },
             ['Speed Modifications'] = {
                 ['Enabled'] = true,
-                ['Mode'] = 'Velocity', -- Humanoid // Velocity
+                ['Ramp'] = {
+                    ['Enabled'] = true,
+                },
                 ['Multipliers'] = {
                     ['Normal'] = { ['Multiplier'] = 37.5 },
                     ['Shooting'] = { ['Multiplier'] = 37.5 },
