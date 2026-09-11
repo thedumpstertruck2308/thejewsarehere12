@@ -1,49 +1,49 @@
 getgenv()['Prosper'] = {
         ['Extras'] = {
-            ["Mod Detector"] = {
-                ["Enabled"] = true,
-                ["Action"] = "Kick", -- Notify // Kick
+            ['Mod Detector'] = {
+                ['Enabled'] = true,
+                ['Action'] = 'Kick', -- Notify // Kick
             },
             ['Report Detector'] = {
                 ['Enabled'] = true,
-                ['Action'] = "Notify", -- Notify // Kick
+                ['Action'] = 'Notify', -- Notify // Kick
                 ['Report Back'] = true,
             },
         },
 
-        ["Character"] = {
+        ['Character'] = {
            ['Avatar Spoofer'] = {
               ['Enabled'] = false,
-              ['Target'] = "prosperity1019", -- Username / UserID
+              ['Target'] = 'prosperity1019', -- Username / UserID
               ['Skinny'] = true, -- Makes your spoofed avatar skinny.
             },
-            ["Headless"] = true,
-            ["Korblox"] = false,
+            ['Headless'] = true,
+            ['Korblox'] = false,
         },
 
-        ["Keybinds"] = {
+        ['Keybinds'] = {
             ['Combat'] = {
-               ['Target'] = "C",
-               ['Camera Aimbot'] = "C",
-               ['Triggerbot'] = "C",
+               ['Target'] = 'C',
+               ['Camera Aimbot'] = 'C',
+               ['Trigger Bot'] = 'C',
             },
 
-            ['Visuals'] = { ['ESP'] = "T", },
+            ['Visuals'] = { ['ESP'] = 'T', },
 
             ['Movement'] = {
-               ['Speed'] = "V",
-               ['Jump'] = "J",
-               ['Panic Ground'] = "K",
+               ['Speed'] = 'V',
+               ['Jump'] = 'J',
+               ['Panic Ground'] = 'K',
             },
 
-             ['Utilities'] = {  ['Inventory Sorter'] = "F2" },
+             ['Utilities'] = {  ['Inventory Sorter'] = 'F2' },
         },
 
         ['Targeting'] = {
             ['Target Mode'] = 'Automatic', -- Automatic // Target
         },
 
-        ["Universal Checks"] = {
+        ['Universal Checks'] = {
             ['Knock Check'] = true,
             ['Self Knock Check'] = true,
             ['Spawn Protection Check'] = false,
@@ -104,15 +104,20 @@ getgenv()['Prosper'] = {
         ['Silent Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000,
-            ['Hit Part'] = "Closest", -- Closest // Part Name
+            ['Hit Part'] = 'Closest', -- Closest // Part Name
             ['Closest'] = {
-                ['Mode'] = "Point", -- Part // Point
+                ['Mode'] = 'Point', -- Part // Point
                 ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
 				['Raycast'] = true, -- Will give you the 1:1 mouse position, and will ignore scale.
             },
+            ['Anti Curve'] = { -- Won't redirect your shot if your camera or gun is angled too far away from the target.
+                ['Enabled'] = false,
+                ['Max Angle'] = 45, -- degrees
+            },
+
             ['Prediction'] = { -- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
 				['Enabled'] = false,
-				['Y Axis'] = "Full", -- Legit // Very Legit // Half // Full
+				['Y Axis'] = 'Full', -- Legit // Very Legit // Half // Full
 				['Auto Prediction'] = {
 				    ['Enabled'] = true, -- If this is true, values don't apply
 				    ['Scale'] = 1, -- Multiplier
@@ -125,8 +130,8 @@ getgenv()['Prosper'] = {
 			 },
 
             ['FOV'] = {-- FOV's
-                ['FOV Type'] = "2D", -- 2D // 3D
-                ['FOV Mode'] = "Simple", -- Simple // Advanced
+                ['FOV Type'] = '2D', -- 2D // 3D
+                ['FOV Mode'] = 'Simple', -- Simple // Advanced
                 ['Show FOV'] = false,
 
                 ['2D'] = {
@@ -166,11 +171,11 @@ getgenv()['Prosper'] = {
         ['Camera Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000,
-            ['Mode'] = "Hold", -- Toggle / Hold / Always
+            ['Mode'] = 'Hold', -- Toggle / Hold / Always
             ['Sticky'] = false,
-            ['Hit Part'] = "Closest", -- Closest // Part Name
+            ['Hit Part'] = 'Closest', -- Closest // Part Name
             ['Closest'] = {
-                ['Mode'] = "Point", -- Part // Point
+                ['Mode'] = 'Point', -- Part // Point
                 ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
 				['Raycast'] = true -- Will give you the 1:1 mouse position, and will ignore scale.
             },
@@ -203,12 +208,12 @@ getgenv()['Prosper'] = {
             },
 
             ['Easing'] = {
-                ['Style'] = "Linear", --[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
-                ['Direction'] = "InOut" --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
+                ['Style'] = 'Linear', --[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
+                ['Direction'] = 'InOut' --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
             ['Bezier'] = {
-                ['Mode'] = "Low", -- Linear // Low // Mid // High // Curve
+                ['Mode'] = 'Low', -- Linear // Low // Mid // High // Curve
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
@@ -217,39 +222,27 @@ getgenv()['Prosper'] = {
                     ['Snappiness'] = { {0.5, 0.5} } -- X // Y
                 },
 
-                ['Snap Delay'] = { -- Delay while snapping onto the person
+                ['Reaction'] = { -- Delay before the camlock starts moving onto a target.
                     ['Enabled'] = false,
-                    ['Delay'] = { {20, 20} }, -- Min // Max (ms)
-                    ['Multiplier'] = 1, -- How fast your camlock moves after the delay (higher = snappier, lower = smoother)
+                    ['Snap'] = { {20, 20} }, -- Min // Max (ms) when it first locks on
+                    ['Target Switch'] = { {15, 25} }, -- Min // Max (ms) when it switches to a different target
                 },
 
-                ['Target Switch Delay'] = { -- Delay when switching to a different target
+                ['Speed Ramp'] = { -- Moves faster the closer your crosshair is to the target (scaled to your FOV size) and the faster they're moving.
                     ['Enabled'] = false,
-                    ['Delay'] = { {15, 25} } -- Min // Max (ms)
-                },
-
-                ['Distance Ramp'] = { -- Move faster when closer to target
-                    ['Enabled'] = false,
-                    ['Base Speed'] = 0.6, -- Base speed multiplier
-                    ['Distance Range'] = {35, 125}, -- Min (px) // Max (px)
+                    ['Speed'] = { {4, 20} }, -- Min // Max target speed (studs/s)
                 },
 
                 ['Readjustment'] = { -- Temporarily stops camlock when clicking / triggerbot fires
                     ['Enabled'] = false,
-                    ['Triggerbot'] = true, -- Stop when triggerbot fires
+                    ['Trigger Bot'] = true, -- Stop when the trigger bot fires
                     ['Mouse Click'] = true, -- Stop when Mouse is clicked
                     ['Delay'] = { {15, 25} }, -- Min // Max (ms)
                 },
 
-                ['Speed Ramp'] = { -- Scales aim speed based on how fast the target character is moving
-                    ['Enabled'] = false,
-                    ['Speed Range'] = { {4, 20} }, -- Min // Max (studs/s)
-                    ['Multiplier Range'] = { {1.0, 1.5} }, -- Min // Max
-                },
-
                 ['Mouse Blend'] = { -- Blends aimbot with your Mouse movement
                     ['Enabled'] = false,
-                    ['Blend Factor'] = 0.3, -- How much to blend (0 = aimbot-controlled, 1 = Mouse-controlled)
+                    ['Blend Factor'] = 30, -- How much to blend in % (0 = aimbot-controlled, 100 = Mouse-controlled)
                 },
 
             },
@@ -262,8 +255,8 @@ getgenv()['Prosper'] = {
             },
 
             ['FOV'] = {
-                ['FOV Type'] = "Circle", -- 2D // 3D // Circle
-                ['FOV Mode'] = "Simple", -- Simple // Advanced
+                ['FOV Type'] = 'Circle', -- 2D // 3D // Circle
+                ['FOV Mode'] = 'Simple', -- Simple // Advanced
                 ['Show FOV'] = false,
                 ['Show Deadzone FOV'] = false,
 
@@ -276,7 +269,7 @@ getgenv()['Prosper'] = {
                         ['Y'] = {1, 2}, -- Up // Down
                     },
                     ['Deadzone'] = {
-                        ['Mode'] = "Simple", -- Simple // Advanced
+                        ['Mode'] = 'Simple', -- Simple // Advanced
                         ['Simple'] = { {1, 2} }, -- X // Y
                         ['Advanced'] = {
                             ['X'] = {1, 2}, -- Left // Right
@@ -295,7 +288,7 @@ getgenv()['Prosper'] = {
                     },
 
                     ['Deadzone'] = {
-                        ['Mode'] = "Simple", -- Simple // Advanced
+                        ['Mode'] = 'Simple', -- Simple // Advanced
                         ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
                       ['Advanced'] = {
@@ -312,8 +305,8 @@ getgenv()['Prosper'] = {
             ['Enabled'] = true, -- Trigger Bot toggle
             ['Range'] = 200,
             ['Settings'] = {
-                ['Mode'] = "Hold", -- Always // Hold // Toggle
-                ['Type'] = "Exact" -- FOV // Exact
+                ['Mode'] = 'Hold', -- Always // Hold // Toggle
+                ['Type'] = 'Exact' -- FOV // Exact
             },
 
             ['Prediction'] = {
@@ -329,36 +322,33 @@ getgenv()['Prosper'] = {
                 ['Shotguns'] = {
                     ['Weapons'] = { 'Double-Barrel SG', 'TacticalShotgun' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when mouse is inside exact hitbox / fov (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay when shooting (ms)
-                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay when switching to this weapon (ms)
-                    ['Target Switch'] = {false, 15, 20} -- Randomized delay when switching targets (ms)
+                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
+                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
+                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
                 ['Pistols'] = {
                     ['Weapons'] = { 'Revolver', 'Silencer' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when mouse is inside exact hitbox / fov (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay when shooting (ms)
-                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay when switching to this weapon (ms)
-                    ['Target Switch'] = {false, 15, 20} -- Randomized delay when switching targets (ms)
+                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
+                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
+                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
                 ['Others'] = {
                     ['Weapons'] = { 'Deagle', 'Rifle' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay when first shooting (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when mouse is inside exact hitbox / fov (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay when shooting (ms)
-                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay when switching to this weapon (ms)
-                    ['Target Switch'] = {false, 15, 20} -- Randomized delay when switching targets (ms)
+                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
+                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
+                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
             },
 
 
            ['FOV'] = {-- FOV's
-                ['FOV Type'] = "2D", -- 2D // 3D
-                ['FOV Mode'] = "Simple", -- Simple // Advanced
+                ['FOV Type'] = '2D', -- 2D // 3D
+                ['FOV Mode'] = 'Simple', -- Simple // Advanced
                 ['Show FOV'] = false,
 
                 ['2D'] = {
@@ -400,7 +390,7 @@ getgenv()['Prosper'] = {
 
             ['Spread Modifications'] = {
                 ['Enabled'] = false,
-                ['Mode'] = "Normal", -- Normal // Custom
+                ['Mode'] = 'Normal', -- Normal // Custom
 
                 ['Double-Barrel SG'] = {
                    ['Normal'] = { {30, 50} }, -- Min // Max
@@ -428,7 +418,7 @@ getgenv()['Prosper'] = {
                 }
             },
 
-            ['No Spread'] = { -- Used for Hood Customs.
+            ['No Spread'] = {
                 ['Enabled'] = false,
             },
 
