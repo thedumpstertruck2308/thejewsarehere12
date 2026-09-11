@@ -110,10 +110,6 @@ getgenv()['Prosper'] = {
                 ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
 				['Raycast'] = true, -- Will give you the 1:1 mouse position, and will ignore scale.
             },
-            ['Anti Curve'] = { -- Won't redirect your shot if your camera or gun is angled too far away from the target.
-                ['Enabled'] = false,
-                ['Max Angle'] = 45, -- degrees
-            },
 
             ['Prediction'] = { -- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
 				['Enabled'] = false,
