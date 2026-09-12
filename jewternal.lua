@@ -12,10 +12,10 @@ shared['Prosper'] = {
         },
 
         ['Character'] = {
-           ['Avatar Spoofer'] = {
-              ['Enabled'] = false,
-              ['Target'] = 'prosperity1019', -- Username / UserID
-              ['Skinny'] = true, -- Makes your spoofed avatar skinny.
+            ['Avatar Spoofer'] = {
+                ['Enabled'] = false,
+                ['Target'] = 'prosperity1019', -- Username / UserID
+                ['Skinny'] = true, -- Makes your spoofed avatar skinny.
             },
             ['Headless'] = true,
             ['Korblox'] = false,
@@ -23,20 +23,20 @@ shared['Prosper'] = {
 
         ['Keybinds'] = {
             ['Combat'] = {
-               ['Target'] = 'C',
-               ['Camera Aimbot'] = 'C',
-               ['Trigger Bot'] = 'C',
+                ['Target'] = 'C',
+                ['Camera Aimbot'] = 'C',
+                ['Trigger Bot'] = 'C',
             },
 
             ['Visuals'] = { ['ESP'] = 'T', },
 
             ['Movement'] = {
-               ['Speed'] = 'V',
-               ['Jump'] = 'J',
-               ['Panic Ground'] = 'K',
+                ['Speed'] = 'V',
+                ['Jump'] = 'J',
+                ['Panic Ground'] = 'K',
             },
 
-             ['Utilities'] = {  ['Inventory Sorter'] = 'F2' },
+            ['Utilities'] = {  ['Inventory Sorter'] = 'F2' },
         },
 
         ['Targeting'] = {
@@ -70,20 +70,20 @@ shared['Prosper'] = {
         ['Future'] = { -- Helps with blanking, use when raging though.
             ['Enabled'] = true,
             ['Guns'] = {
-                 ['[Revolver]'] = {
+                ['[Revolver]'] = {
                     ['Enabled'] = false,
                     ['Scale'] = 1, -- Multiplier
-                 },
+                },
 
-                 ['[Double-Barrel SG]'] = {
+                ['[Double-Barrel SG]'] = {
                     ['Enabled'] = false,
                     ['Scale'] = 1,-- Multiplier
-                 },
+                },
 
-                 ['[TacticalShotgun]'] = {
+                ['[TacticalShotgun]'] = {
                     ['Enabled'] = false,
                     ['Scale'] = 1,-- Multiplier
-                 },
+                },
             }
         },
 
@@ -104,30 +104,29 @@ shared['Prosper'] = {
         ['Silent Aimbot'] = {
             ['Enabled'] = true,
             ['Range'] = 1000,
-            ['Hit Part'] = 'Closest', -- Closest // Part Name
-            ['Closest'] = {
-                ['Mode'] = 'Point', -- Part // Point
-                ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
-				['Raycast'] = true, -- Will give you the 1:1 mouse position, and will ignore scale.
+            ['Hit Part'] = 'Closest Point', -- Closest Point // Closest Part // Part Name
+            ['Closest Point'] = {
+                ['Mode'] = 'Prosper', -- Prosper // Scaled
+                ['Scale'] = 0.35, -- Only used by Scaled (0 being centered, 1 being the full part edge)
             },
-            ['Anti Curve'] = {  -- Won't redirect your shot if your camera is farther than the max angle.
+            ['Anti Curve'] = { -- Won't redirect your shot if your camera is higher angled to the target then your max angle.
                 ['Enabled'] = false,
                 ['Max Angle'] = 5, -- degrees
             },
 
             ['Prediction'] = { -- Turn off prediction if you're in a 0 delay game, or you're not hitting your shots.
-				['Enabled'] = false,
-				['Y Axis'] = 'Full', -- Legit // Very Legit // Half // Full
-				['Auto Prediction'] = {
-				    ['Enabled'] = true, -- If this is true, values don't apply
-				    ['Scale'] = 1, -- Multiplier
-				},
-				['Values'] = {
-					['X'] = 0.1,
-					['Y'] = 0.1,
-					['Z'] = 0.1
-				},
-			 },
+                ['Enabled'] = false,
+                ['Y Axis'] = 'Full', -- Legit // Very Legit // Half // Full
+                ['Auto Prediction'] = {
+                    ['Enabled'] = true, -- If this is true, values don't apply
+                    ['Scale'] = 1, -- Multiplier
+                },
+                ['Values'] = {
+                    ['X'] = 0.1,
+                    ['Y'] = 0.1,
+                    ['Z'] = 0.1
+                },
+            },
 
             ['FOV'] = {-- FOV's
                 ['FOV Type'] = '2D', -- 2D // 3D
@@ -173,11 +172,10 @@ shared['Prosper'] = {
             ['Range'] = 1000,
             ['Mode'] = 'Hold', -- Toggle / Hold / Always
             ['Sticky'] = false,
-            ['Hit Part'] = 'Closest', -- Closest // Part Name
-            ['Closest'] = {
-                ['Mode'] = 'Point', -- Part // Point
-                ['Scale'] = {true, 0.35}, -- Enabled (if disabled, wont scale), Scale (0 being the full part edge, 1 being centered)
-				['Raycast'] = true -- Will give you the 1:1 mouse position, and will ignore scale.
+            ['Hit Part'] = 'Closest Point', -- Closest Point // Closest Part // Part Name
+            ['Closest Point'] = {
+                ['Mode'] = 'Prosper', -- Prosper // Scaled
+                ['Scale'] = 0.35, -- Only used by Scaled (0 being centered, 1 being the full part edge)
             },
 
             ['Prediction'] = {
@@ -233,21 +231,25 @@ shared['Prosper'] = {
                     ['Speed'] = { {4, 20} }, -- Min // Max target speed (studs/s)
                 },
 
-                ['Readjustment'] = { -- Temporarily stops camlock when clicking / triggerbot fires
+                ['Readjustment'] = { -- Temporarily stops camlock when clicking / triggerbot fires.
                     ['Enabled'] = false,
                     ['Trigger Bot'] = true, -- Stop when the trigger bot fires
                     ['Mouse Click'] = true, -- Stop when Mouse is clicked
                     ['Delay'] = { {15, 25} }, -- Min // Max (ms)
                 },
 
-                ['Mouse Blend'] = { -- Blends aimbot with your Mouse movement
+                ['Reload'] = { -- Pauses the camlock while you're reloading.
+                    ['Enabled'] = false,
+                },
+
+                ['Mouse Blend'] = { -- Blends aimbot with your Mouse movement.
                     ['Enabled'] = false,
                     ['Blend Factor'] = 30, -- How much to blend in % (0 = aimbot-controlled, 100 = Mouse-controlled)
                 },
 
             },
 
-            ['Camera Aimbot Conditions'] = { -- These conditions are meant for legit cheating, but use these for what type of playstyle if you main.
+            ['Camera Aimbot Conditions'] = { -- Conditions..
                 ['First Person'] = true,
                 ['Third Person'] = false,
                 ['Right Click'] = false,
@@ -255,12 +257,10 @@ shared['Prosper'] = {
             },
 
             ['FOV'] = {
-                ['FOV Type'] = 'Circle', -- 2D // 3D // Circle
+                ['FOV Type'] = '3D', -- 2D // 3D
                 ['FOV Mode'] = 'Simple', -- Simple // Advanced
                 ['Show FOV'] = false,
                 ['Show Deadzone FOV'] = false,
-
-                ['Circle'] = { ['Radius'] = 125,  ['Deadzone Radius'] = 35 },
 
                 ['2D'] = {
                     ['Simple'] = { {1, 2} }, -- X // Y
@@ -269,7 +269,6 @@ shared['Prosper'] = {
                         ['Y'] = {1, 2}, -- Up // Down
                     },
                     ['Deadzone'] = {
-                        ['Mode'] = 'Simple', -- Simple // Advanced
                         ['Simple'] = { {1, 2} }, -- X // Y
                         ['Advanced'] = {
                             ['X'] = {1, 2}, -- Left // Right
@@ -288,14 +287,13 @@ shared['Prosper'] = {
                     },
 
                     ['Deadzone'] = {
-                        ['Mode'] = 'Simple', -- Simple // Advanced
                         ['Simple'] = {3, 5, 3}, -- X // Y // Z
 
-                      ['Advanced'] = {
-                         ['X'] = {1.5, 1.8}, -- Left // Right
-                         ['Y'] = {1, 2}, -- Up // Down
-                         ['Z'] = {1, 2},  -- Left // Right (Side of Player)
-                      },
+                        ['Advanced'] = {
+                            ['X'] = {1.5, 1.8}, -- Left // Right
+                            ['Y'] = {1, 2}, -- Up // Down
+                            ['Z'] = {1, 2},  -- Left // Right (Side of Player)
+                        },
                     },
                 },
             },
@@ -346,7 +344,7 @@ shared['Prosper'] = {
             },
 
 
-           ['FOV'] = {-- FOV's
+            ['FOV'] = {-- FOV's
                 ['FOV Type'] = '2D', -- 2D // 3D
                 ['FOV Mode'] = 'Simple', -- Simple // Advanced
                 ['Show FOV'] = false,
@@ -373,12 +371,6 @@ shared['Prosper'] = {
         },
 
         ['Gun Modifications'] = {
-            ['Void Falls'] = {
-                ['Bullet TP'] = {
-                    ['Enabled'] = false,
-                },
-            },
-
             ['Delay Changer'] = {
                 ['Enabled'] = false,
                 ['Weapons'] = {
@@ -393,12 +385,12 @@ shared['Prosper'] = {
                 ['Mode'] = 'Normal', -- Normal // Custom
 
                 ['Double-Barrel SG'] = {
-                   ['Normal'] = { {30, 50} }, -- Min // Max
-                   ['Custom'] = {
+                    ['Normal'] = { {30, 50} }, -- Min // Max
+                    ['Custom'] = {
                         ['X'] = { {0.5, 0.03, 0.03}, },
                         ['Y'] = { {0.5, 0.06, 0.06}, },
                         ['Z'] = { {0.5, 0.03, 0.03}, },
-                   },
+                    },
                 },
                 ['TacticalShotgun'] = {
                     ['Normal'] = { {30, 50} }, -- Min // Max
@@ -418,10 +410,6 @@ shared['Prosper'] = {
                 }
             },
 
-            ['No Spread'] = {
-                ['Enabled'] = false,
-            },
-
             ['Damage Override'] = {
                 ['Enabled'] = false,
                 ['Weapons'] = { -- Full // Half // Min // Normal
@@ -435,19 +423,33 @@ shared['Prosper'] = {
 
         },
 
+        ['Game Exclusive'] = { -- Features that only work in the game they're listed under.
+            ['Void Falls'] = {
+                ['Bullet TP'] = { ['Enabled'] = false },
+            },
+
+            ['Hood Customs'] = {
+                ['No Spread'] = { ['Enabled'] = false },
+            },
+
+            ['Das Hood'] = {
+                ['Infinite Range'] = { ['Enabled'] = false },
+            },
+        },
+
         ['Fonts'] = { -- Fonts for certain kinds of ESP stuff.
             --[[ Custom  -> Proggy Clean // Smallest Pixel-7 // Tahoma // Minecraftia // TahomaBold ]]
             --[[ Drawing -> UI // System // Plain // Monospace ]]
-            --[[ Roblox  -> Legacy // Arial // ArialBold // SourceSans // SourceSansBold // SourceSansLight // SourceSansItalic // Bodoni // Garamond // Cartoon // Code // Highway // SciFi // Arcade // Fantasy // Antique // SourceSansSemibold // Gotham // GothamMedium // GothamBold // GothamBlack // AmaticSC // Bangers // Creepster // DenkOne // Fondamento // FredokaOne // GrenzeGotisch // IndieFlower // JosefinSans // Jura // Kalam // LuckiestGuy // Merriweather // Michroma // Nunito // Oswald // PatrickHand // PermanentMarker // Roboto // RobotoCondensed // RobotoMono // Sarpanch // SpecialElite // TitilliumWeb // Ubuntu // BuilderSans // BuilderSansMedium // BuilderSansBold // BuilderSansExtraBold // Arimo // ArimoBold ]]
+            --[[ Roblox  -> https://create.roblox.com/docs/reference/engine/enums/Font ]]
             ['ESP Names'] = { 'Custom', 'Smallest Pixel-7', 12 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Numbers'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Distance'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
-            ['Information'] = { 'Custom', 'TahomaBold', 12 }, -- Format: { Font Type, Font, Text Size }
+            ['Panel'] = { 'Custom', 'TahomaBold', 12 }, -- Format: { Font Type, Font, Text Size }
         },
 
-        ['Information'] = {
+        ['Panel'] = {
             ['Enabled'] = true,
-            ['Theme'] = 'Default', -- Default // Aurora // Sunset // Ocean // Mono
+            ['Theme'] = 'Default', -- Default // Aurora // Sunset // Ocean // Mono // Rose
             ['Position'] = 'Default', -- Default // Top Middle // Middle Left // Middle Right
             ['Watermark'] = '/prosperlol',
         },
