@@ -15,7 +15,8 @@ shared['Prosper'] = {
             ['Avatar Spoofer'] = {
                 ['Enabled'] = false,
                 ['Target'] = 'prosperity1019', -- Username / UserID
-                ['Skinny'] = true, -- Makes your spoofed avatar skinny.
+                ['Mode'] = 'Full', -- Full // Animations // Emotes // Character
+                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat; size only, preserves the target's body package.
             },
             ['Headless'] = true,
             ['Korblox'] = false,
@@ -28,7 +29,10 @@ shared['Prosper'] = {
                 ['Trigger Bot'] = 'C',
             },
 
-            ['Visuals'] = { ['ESP'] = 'T', },
+            ['Visuals'] = {
+                ['ESP'] = 'T',
+                ['Radar'] = 'Y',
+            },
 
             ['Movement'] = {
                 ['Speed'] = 'V',
@@ -194,7 +198,7 @@ shared['Prosper'] = {
             ['Snappiness'] = {
                 ['Enabled'] = true,
                 ['Type'] = 'Simple', -- Simple // Advanced
-                ['Curve Type'] = 'Bezier', -- Bezier // Easing
+                ['Curve Type'] = 'Bezier', -- Bezier // Easing // None
 
                 ['Simple'] = { {0.124, 0.111} }, -- X // Y
 
@@ -434,17 +438,25 @@ shared['Prosper'] = {
 
             ['Das Hood'] = {
                 ['Infinite Range'] = { ['Enabled'] = false },
+                ['Wall Bang'] = { ['Enabled'] = false }, -- Only shoots through the map while Rage Mode is on
             },
         },
 
         ['Fonts'] = { -- Fonts for certain kinds of ESP stuff.
-            --[[ Custom  -> Proggy Clean // Smallest Pixel-7 // Tahoma // Minecraftia // TahomaBold ]]
             --[[ Drawing -> UI // System // Plain // Monospace ]]
             --[[ Roblox  -> https://create.roblox.com/docs/reference/engine/enums/Font ]]
-            ['ESP Names'] = { 'Custom', 'Smallest Pixel-7', 12 }, -- Format: { Font Type, Font, Text Size }
-            ['ESP Numbers'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
-            ['ESP Distance'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
-            ['Panel'] = { 'Custom', 'TahomaBold', 12 }, -- Format: { Font Type, Font, Text Size }
+            ['ESP Names'] = { 'Roblox', 'Arcade', 12 }, -- Format: { Font Type, Font, Text Size }
+            ['ESP Numbers'] = { 'Roblox', 'Arcade', 9 }, -- Format: { Font Type, Font, Text Size }
+            ['Panel'] = { 'Roblox', 'ArialBold', 12 }, -- Format: { Font Type, Font, Text Size }
+        },
+
+        ['Radar'] = { -- Da Hood map radar, in Battle Royale it also shows where the zone is shrinking to
+            ['Enabled'] = true,
+            ['Position'] = 'Top Right', -- Top Right // Top Left // Bottom Right // Bottom Left // Middle Right // Middle Left
+            ['Size'] = 'Medium', -- Small // Medium // Large
+            ['Shape'] = 'Square', -- Square // Circle
+            ['Players'] = true, -- Shows other players on the radar
+            ['Zone Prediction'] = true, -- Predicts the zone of the current battle royale match.
         },
 
         ['Panel'] = {
@@ -460,21 +472,10 @@ shared['Prosper'] = {
             ['Color'] = Color3.fromRGB(255, 255, 255),
             ['OutlineColor'] = Color3.fromRGB(0, 0, 0),
 
-            ['Box'] = {
-                ['Enabled'] = true,
-                ['Type'] = 'Dynamic', -- Dynamic // Static
-                ['Box Mode'] = 'Corner' -- Corner // Box
-            },
-
             ['Health'] = {
                 ['Enabled'] = true,
                 ['Position'] = 'Left', -- Top // Bottom // Left // Right
                 ['Mode'] = 'Current Target', -- All // Current Target
-            },
-
-            ['Distance'] = {
-                ['Enabled'] = true,
-                ['Position'] = 'Bottom', -- Top // Bottom // Left // Right
             },
 
             ['Names'] = {
