@@ -29,10 +29,7 @@ shared['Prosper'] = {
                 ['Trigger Bot'] = 'C',
             },
 
-            ['Visuals'] = {
-                ['ESP'] = 'T',
-                ['Radar'] = 'Y',
-            },
+            ['Visuals'] = { ['ESP'] = 'T', },
 
             ['Movement'] = {
                 ['Speed'] = 'V',
@@ -71,22 +68,22 @@ shared['Prosper'] = {
             },
         },
 
-        ['Future'] = { -- Helps with blanking, use when raging though.
+        ['Future'] = {
             ['Enabled'] = true,
             ['Guns'] = {
                 ['[Revolver]'] = {
                     ['Enabled'] = false,
-                    ['Scale'] = 1, -- Multiplier
+                    ['Scale'] = 1,
                 },
 
                 ['[Double-Barrel SG]'] = {
                     ['Enabled'] = false,
-                    ['Scale'] = 1,-- Multiplier
+                    ['Scale'] = 1,
                 },
 
                 ['[TacticalShotgun]'] = {
                     ['Enabled'] = false,
-                    ['Scale'] = 1,-- Multiplier
+                    ['Scale'] = 1,
                 },
             }
         },
@@ -198,15 +195,11 @@ shared['Prosper'] = {
             ['Snappiness'] = {
                 ['Enabled'] = true,
                 ['Type'] = 'Simple', -- Simple // Advanced
-                ['Curve Type'] = 'Bezier', -- Bezier // Easing // None
+                ['Curve Type'] = 'Easing', -- Easing // None
 
-                ['Simple'] = { {0.124, 0.111} }, -- X // Y
+                ['Simple'] = 0.124,
 
-                ['Advanced'] = {
-                    ['Strength'] = { {0.24, 0.26} }, -- X // Y
-
-                    ['Sensitivity'] = 67 -- % of sensitivity based on the strength you use.
-                }
+                ['Advanced'] = { {0.124, 0.111} } -- X // Y
             },
 
             ['Easing'] = {
@@ -214,14 +207,12 @@ shared['Prosper'] = {
                 ['Direction'] = 'InOut' --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
-            ['Bezier'] = {
-                ['Mode'] = 'Low', -- Linear // Low // Mid // High // Curve
-            },
-
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
-                    ['Snappiness'] = { {0.5, 0.5} } -- X // Y
+                    ['Type'] = 'Simple', -- Simple // Advanced
+                    ['Simple'] = 0.5,
+                    ['Advanced'] = { {0.5, 0.5} } -- X // Y
                 },
 
                 ['Reaction'] = { -- Delay before the camlock starts moving onto a target.
@@ -324,25 +315,19 @@ shared['Prosper'] = {
                 ['Shotguns'] = {
                     ['Weapons'] = { 'Double-Barrel SG', 'TacticalShotgun' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Reaction'] = {true, 10, 15}, -- Randomized delay before shooting (ms)
                     ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
                 ['Pistols'] = {
                     ['Weapons'] = { 'Revolver', 'Silencer' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Reaction'] = {true, 10, 15}, -- Randomized delay before shooting (ms)
                     ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
                 ['Others'] = {
                     ['Weapons'] = { 'Deagle', 'Rifle' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Reaction'] = {true, 10, 15}, -- Randomized delay before shooting (ms)
                     ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
             },
@@ -448,15 +433,6 @@ shared['Prosper'] = {
             ['ESP Names'] = { 'Roblox', 'Arcade', 12 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Numbers'] = { 'Roblox', 'Arcade', 9 }, -- Format: { Font Type, Font, Text Size }
             ['Panel'] = { 'Roblox', 'ArialBold', 12 }, -- Format: { Font Type, Font, Text Size }
-        },
-
-        ['Radar'] = { -- Da Hood map radar, in Battle Royale it also shows where the zone is shrinking to
-            ['Enabled'] = true,
-            ['Position'] = 'Top Right', -- Top Right // Top Left // Bottom Right // Bottom Left // Middle Right // Middle Left
-            ['Size'] = 'Medium', -- Small // Medium // Large
-            ['Shape'] = 'Square', -- Square // Circle
-            ['Players'] = true, -- Shows other players on the radar
-            ['Zone Prediction'] = true, -- Predicts the zone of the current battle royale match.
         },
 
         ['Panel'] = {
