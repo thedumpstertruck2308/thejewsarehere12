@@ -192,15 +192,11 @@ getgenv()['Prosper'] = {
             ['Snappiness'] = {
                 ['Enabled'] = true,
                 ['Type'] = 'Simple', -- Simple // Advanced
-                ['Curve Type'] = 'Bezier', -- Bezier // Easing
+                ['Curve Type'] = 'Easing', -- Easing // None
 
-                ['Simple'] = { {0.124, 0.111} }, -- X // Y
+                ['Simple'] = 0.124,
 
-                ['Advanced'] = {
-                    ['Strength'] = { {0.24, 0.26} }, -- X // Y
-
-                    ['Sensitivity'] = 67 -- % of sensitivity based on the strength you use.
-                }
+                ['Advanced'] = { {0.124, 0.111} } -- X // Y
             },
 
             ['Easing'] = {
@@ -208,14 +204,12 @@ getgenv()['Prosper'] = {
                 ['Direction'] = 'InOut' --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
-            ['Bezier'] = {
-                ['Mode'] = 'Low', -- Linear // Low // Mid // High // Curve
-            },
-
             ['Humanization Features'] = { -- Use these features to pass clip-checks
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
-                    ['Snappiness'] = { {0.5, 0.5} } -- X // Y
+                    ['Type'] = 'Simple', -- Simple // Advanced
+                    ['Simple'] = 0.5,
+                    ['Advanced'] = { {0.5, 0.5} } -- X // Y
                 },
 
                 ['Reaction'] = { -- Delay before the camlock starts moving onto a target.
@@ -318,25 +312,19 @@ getgenv()['Prosper'] = {
                 ['Shotguns'] = {
                     ['Weapons'] = { 'Double-Barrel SG', 'TacticalShotgun' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Reaction'] = {true, 10, 15}, -- Randomized delay before shooting (ms)
                     ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
                 ['Pistols'] = {
                     ['Weapons'] = { 'Revolver', 'Silencer' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Reaction'] = {true, 10, 15}, -- Randomized delay before shooting (ms)
                     ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
                 ['Others'] = {
                     ['Weapons'] = { 'Deagle', 'Rifle' },
                     ['Enabled'] = false, -- If delay is on or off for these guns.
-                    ['Initial'] = {true, 10, 15}, -- Randomized delay before the first shot at a new target (ms)
-                    ['Mouse'] = {true, 5, 10}, -- Randomized delay when your crosshair comes back onto the target you're shooting (ms)
-                    ['Shoot'] = {true, 30, 40}, -- Randomized delay after the gun's cooldown before the next shot (ms)
+                    ['Reaction'] = {true, 10, 15}, -- Randomized delay before shooting (ms)
                     ['Tool Switch'] = {true, 20, 30}, -- Randomized delay after equipping this weapon (ms)
                 },
             },
@@ -434,7 +422,7 @@ getgenv()['Prosper'] = {
         ['Fonts'] = { -- Fonts for certain kinds of ESP stuff.
             --[[ Custom  -> Proggy Clean // Smallest Pixel-7 // Tahoma // Minecraftia // TahomaBold ]]
             --[[ Drawing -> UI // System // Plain // Monospace ]]
-            --[[ Roblox  -> Legacy // Arial // ArialBold // SourceSans // SourceSansBold // SourceSansLight // SourceSansItalic // Bodoni // Garamond // Cartoon // Code // Highway // SciFi // Arcade // Fantasy // Antique // SourceSansSemibold // Gotham // GothamMedium // GothamBold // GothamBlack // AmaticSC // Bangers // Creepster // DenkOne // Fondamento // FredokaOne // GrenzeGotisch // IndieFlower // JosefinSans // Jura // Kalam // LuckiestGuy // Merriweather // Michroma // Nunito // Oswald // PatrickHand // PermanentMarker // Roboto // RobotoCondensed // RobotoMono // Sarpanch // SpecialElite // TitilliumWeb // Ubuntu // BuilderSans // BuilderSansMedium // BuilderSansBold // BuilderSansExtraBold // Arimo // ArimoBold ]]
+            --[[ Roblox  -> https://create.roblox.com/docs/reference/engine/enums/Font ]]
             ['ESP Names'] = { 'Custom', 'Smallest Pixel-7', 12 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Numbers'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
             ['ESP Distance'] = { 'Custom', 'Smallest Pixel-7', 9 }, -- Format: { Font Type, Font, Text Size }
