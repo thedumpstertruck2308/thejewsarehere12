@@ -16,7 +16,7 @@ shared['Prosper'] = {
                 ['Enabled'] = false,
                 ['Target'] = 'prosperity1019', -- Username / UserID
                 ['Mode'] = 'Full', -- Full // Animations // Emotes // Character
-                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat; size only, preserves the target's body package.
+                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat
             },
             ['Headless'] = true,
             ['Korblox'] = false,
