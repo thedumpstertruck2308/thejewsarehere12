@@ -423,7 +423,7 @@ shared['Prosper'] = {
 
             ['Das Hood'] = {
                 ['Infinite Range'] = { ['Enabled'] = false },
-                ['Wall Bang'] = { ['Enabled'] = false }, -- Only shoots through the map while Rage Mode is on
+                ['Wall Bang'] = { ['Enabled'] = false }, 
             },
         },
 
