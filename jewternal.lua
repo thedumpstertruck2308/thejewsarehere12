@@ -315,7 +315,6 @@ shared['Prosper'] = {
                 },
             },
 
-            ['Use Weapon Cooldown'] = false, -- Will use your weapon cooldown to delay your triggerbot.
 
             ['Weapon Delays'] = { -- You can put any weapon in their proper category, if the weapon you're using isn't in here, it acts as 0 delay.
                 ['Shotguns'] = {
