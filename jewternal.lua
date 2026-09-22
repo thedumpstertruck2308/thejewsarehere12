@@ -416,7 +416,7 @@ shared['Prosper'] = {
 
             ['Range Enhancer'] = { ['Enabled'] = false, },
 
-            ['Wall Bang'] = { ['Enabled'] = false, }, -- Hits your target through cover when a clear spot within reach of them exists
+            ['Wall Bang'] = { ['Enabled'] = false, }, 
 
         },
 
@@ -431,7 +431,7 @@ shared['Prosper'] = {
 
             ['Das Hood'] = {
                 ['Infinite Range'] = { ['Enabled'] = false },
-                ['Wall Bang'] = { ['Enabled'] = false }, -- Only shoots through the map while Rage Mode is on
+                ['Wall Bang'] = { ['Enabled'] = false },
             },
         },
 
