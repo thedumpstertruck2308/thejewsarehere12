@@ -209,7 +209,6 @@ shared['Prosper'] = {
             ['Easing'] = {
                 ['Style'] = 'Linear', --[[ https://create.roblox.com/docs/reference/engine/enums/EasingStyle ]]
                 ['Direction'] = 'InOut', --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
-                ['Points'] = { {0.25, 0.1}, {0.75, 0.9} } -- Used when Style is Custom: Time // Progress, both 0 - 1 (the curve always starts at 0, 0 and ends at 1, 1)
             },
 
             ['Humanization Features'] = { -- Use these features to pass clip-checks
