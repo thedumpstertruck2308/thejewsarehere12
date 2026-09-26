@@ -16,7 +16,7 @@ shared['Prosper'] = {
                 ['Enabled'] = false,
                 ['Target'] = 'prosperity1019', -- Username / UserID
                 ['Mode'] = 'Full', -- Full // Animations // Emotes // Character
-                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat; size only, preserves the target's body package.
+                ['Body Type'] = 'Skinny', -- Skinny // Normal // Fat
             },
             ['Headless'] = true,
             ['Korblox'] = false,
@@ -201,7 +201,7 @@ shared['Prosper'] = {
 
                 ['Custom'] = {
                     ['Strength'] = { {0.124, 0.111} }, -- X // Y
-                    ['Stickiness'] = 1, -- Multiplier while your crosshair is on the target (1 being normal, higher sticks harder, lower sticks less)
+                    ['Stickiness'] = 1, -- 0 - 2, 0 being no stick 1 being regular stick 2 being the stickiest.
                     ['Sensitivity'] = 100, -- 0 - 100 (how much of your Strength is applied)
                 },
             },
@@ -211,7 +211,7 @@ shared['Prosper'] = {
                 ['Direction'] = 'InOut', --[[ https://create.roblox.com/docs/reference/engine/enums/EasingDirection ]]
             },
 
-            ['Humanization Features'] = { -- Use these features to pass clip-checks
+            ['Humanization Features'] = {
                 ['Deadzone Snappiness'] = {
                     ['Enabled'] = true,
                     ['Type'] = 'Simple', -- Simple // Advanced
@@ -237,13 +237,27 @@ shared['Prosper'] = {
                     ['Delay'] = { {15, 25} }, -- Min // Max (ms)
                 },
 
-                ['Reload'] = { -- Pauses the camlock while you're reloading.
-                    ['Enabled'] = false,
-                },
-
                 ['Mouse Blend'] = { -- Blends aimbot with your Mouse movement.
                     ['Enabled'] = false,
                     ['Blend Factor'] = 30, -- How much to blend in % (0 = aimbot-controlled, 100 = Mouse-controlled)
+                },
+
+                ['Unlock On Knock'] = { -- Stops camlock when your target gets knocked.
+                    ['Enabled'] = false,
+                    ['Always Delay'] = { {2000, 3000} }, -- Min // Max (ms) before it locks again in Always mode
+                },
+
+                ['Direction Reaction'] = { -- Reacts late when the target changes direction.
+                    ['Enabled'] = false,
+                    ['Angle'] = 60, -- How sharp the turn has to be (degrees)
+                    ['Delay'] = { {100, 180} }, -- Min // Max (ms)
+                },
+
+                ['Correction Bursts'] = { -- Tracks in small bursts instead of perfectly smooth.
+                    ['Enabled'] = false,
+                    ['Burst'] = { {60, 140} }, -- Min // Max (ms)
+                    ['Pause'] = { {20, 50} }, -- Min // Max (ms)
+                    ['Pause Speed'] = 20, -- Speed during pauses in %
                 },
 
             },
@@ -252,7 +266,8 @@ shared['Prosper'] = {
                 ['First Person'] = true,
                 ['Third Person'] = false,
                 ['Right Click'] = false,
-                ['Shift Lock'] = false
+                ['Shift Lock'] = false,
+                ['Reload'] = false
             },
 
             ['FOV'] = {
@@ -314,7 +329,6 @@ shared['Prosper'] = {
                     ['Z'] = 0.1,
                 },
             },
-
 
             ['Weapon Delays'] = { -- You can put any weapon in their proper category, if the weapon you're using isn't in here, it acts as 0 delay.
                 ['Shotguns'] = {
@@ -415,7 +429,7 @@ shared['Prosper'] = {
 
             ['Range Enhancer'] = { ['Enabled'] = false, },
 
-            ['Wall Bang'] = { ['Enabled'] = false, }, 
+            ['Wall Bang'] = { ['Enabled'] = false, },
 
         },
 
